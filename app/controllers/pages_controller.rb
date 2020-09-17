@@ -4,6 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def about
+  def landing
   end
 end
