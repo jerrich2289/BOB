@@ -1,0 +1,11 @@
+.game-card {
+display: flex;
+border-radius: 5px;
+object-size: cover;
+height: 208px;
+width: 268px;
+border: 3px solid #FFFFF;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+
