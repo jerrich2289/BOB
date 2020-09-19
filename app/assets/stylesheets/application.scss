@@ -11,3 +11,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+
+// This might belong somewhere else, but it's here for now
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(225deg, #00FBFF 0%, #2BA9D9 100%);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ---- fonts ----  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
