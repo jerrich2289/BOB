@@ -7,4 +7,9 @@ class ItemsController < ApplicationController
 
   def index
   end
+
+  def dummy 
+    # this one's just for making the card 
+    # component dummy site function
+  end
 end
