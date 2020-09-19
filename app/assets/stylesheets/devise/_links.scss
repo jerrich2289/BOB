@@ -1,0 +1,59 @@
+.devise-container {
+  width: 100%;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.0796252);
+  border-radius: 12px;
+}
+
+.devise-link {
+  color:black;
+  &:hover {
+    text-decoration: none; 
+    color: black;
+  }
+}
+
+.devise-padding {
+  padding: 30px 0px 0px 0px;
+}
+
+.devise-grey-text {
+  color: #898989;
+}
+
+.form-control {
+  background-color: #F5F5F5;
+  border: 0;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  background-color: #F5F5F5;
+  border: 0;
+  border-radius: 5px;
+}
+
+.forgot-password {
+  display: flex;
+  flex: center;
+  justify-content: right;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333333;
+}
+
+.container-bottom {
+  width: 90%;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.0796252);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.devise-wrapper {
+  padding: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
