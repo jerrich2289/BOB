@@ -1,4 +1,4 @@
 class Message < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :trade_it
+  belongs_to :user
+  belongs_to :trade
 end
