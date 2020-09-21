@@ -38,22 +38,31 @@
   display: flex;
   flex: center;
   justify-content: right;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 14px;
   color: #333333;
 }
 
 .container-bottom {
+  display: flex;
   width: 90%;
   margin: 0 auto;
   background: #FFFFFF;
   box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.0796252);
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .devise-wrapper {
   padding: 10px;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.devise-button-margin {
+  margin-bottom: 32px;
+}
+
+.devise-center-text {
+  margin: 20px auto;
 }
