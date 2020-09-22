@@ -6,10 +6,11 @@ class ItemsController < ApplicationController
   end
 
   def index
+    @items = Item.all
   end
 
-  def dummy 
-    # this one's just for making the card 
+  def dummy
+    # this one's just for making the card
     # component dummy site function
   end
 end
