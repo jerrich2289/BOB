@@ -53,6 +53,7 @@
   border-radius:50%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   object-fit: cover;
+  margin-top: -100px;
 }
 
 .avatar-120-image {
@@ -61,6 +62,15 @@
   border-radius:50%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   object-fit: cover;
+}
+
+.avatar-120-add-item {
+  width: 120px;
+  height: 120px;
+  border-radius:50%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  object-fit: cover;
+  margin: 75px;
 }
 
 .avatar-150-image {
