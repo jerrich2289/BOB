@@ -23,11 +23,23 @@
   background: white;
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
 }
-
 #fuckin-btn a {
-  color: linear-gradient(225deg, #00FBFF 0%, #2BA9D9 100%) !important;
-  text-decoration: none;
+  // position: absolute;
+  // left: 34.93%;
+  // right: 36.27%;
+  // top: 67%;
+  // bottom: 30.79%;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  // line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: #29AEDB;
 }
+
 .container {
   margin-top: 100px;
   padding-top: 30px;
@@ -47,4 +59,5 @@
 .text-center {
   text-align: center;
 }
+
 
