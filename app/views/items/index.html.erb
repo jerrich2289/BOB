@@ -7,7 +7,11 @@
     <div class='row justify-content-center d-flex'>
       <div class='col-10' align='center'>
           <%=image_tag("Jazz.jpg", :class => "avatar-120")%>
-            <h6><b>Hello <%=User.name%>!</b></h6>
+            <h5><b>Hello <%=current_user.name%>!</b></h5>
+            <div class="star-container">
+            <span class="material-icons">grade grade grade grade star_outline</span>
+            </div>
+            <p><%=current_user.address%></p>
 
           <%=image_tag("add_photo.jpg", :class => "avatar-120-add-item")%>
         </div>
@@ -15,5 +19,5 @@
 </div>
 
 
-
+<!-- <input type="file" accept="image/*"> -->
 
