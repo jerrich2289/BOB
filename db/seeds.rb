@@ -9,10 +9,10 @@ Message.destroy_all
 Trade.destroy_all
 Item.destroy_all
 User.destroy_all
-user1 = User.create!(name: "Bigger10", email: "chickenbreastssss@test.com", password: "password")
-user2 = User.create!(name: "Better8", email: "email@email.com", password: 'password')
-user3 = User.create!(name: "Swapsy22", email: "swapsy@test.com", password: "password")
-user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password")
+user1 = User.create!(name: "Bigger10", email: "chickenbreastssss@test.com", password: "password", address: "Oslo, Norway")
+user2 = User.create!(name: "Better8", email: "email@email.com", password: 'password', address: "Oslo, Norway")
+user3 = User.create!(name: "Swapsy22", email: "swapsy@test.com",  password: "password", address: "Oslo, Norway")
+user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password", address: "Oslo, Norway")
 
 item1 = Item.create!(name: "chair", description: "I am an average chair", size: "3", owner: user1,)
 item1.photo.attach(io: File.open("app/assets/images/preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg"),filename: "preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg")
