@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'items/new'
-  get 'items/create'
-  get 'items/index'
+  resources :items, only: [:new, :create, :index]
   devise_for :users
   root to: 'pages#landing'
 
