@@ -9,6 +9,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/index.scss">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -21,4 +23,21 @@
     <p class='alert'><%= alert %></p>
     <%= yield %>
   </body>
+
+  <footer>
+    <nav class="nav">
+      <a href="#" class="nav__link">
+        <i class="material-icons nav__icon">chat_bubble_outline</i>
+        </span class="nav__text">Chat</span>
+      </a>
+      <a href="#" class="nav__link">
+        <i class="material-icons nav__icon">attach_file</i>
+        </span class="nav__text">Play</span>
+      </a>
+      <a href="#" class="nav__link nav__link--active">
+        <i class="material-icons nav__icon">home</i>
+        </span class="nav__text">Home</span>
+      </a>
+    </nav>
+  </footer>
 </html>
