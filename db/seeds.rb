@@ -34,6 +34,30 @@ item4 = Item.new(name: 'lamp shade', description: 'I prefer to be worn as a hat'
 item4.photos.attach(io: File.open("app/assets/images/Lampshade.jpg"),filename: "Lampshade.jpg")
 item4.save!
 
+item5 = Item.new(name: 'My Dirty sex ridden bed', description: 'Well loved, very well loved.', size: '5', owner: user1)
+item5.photos.attach(io: File.open("app/assets/images/bed-mattress.jpg"),filename: "bed-mattress.jpg")
+item5.save!
+
+item6 = Item.new(name: 'Floral chair', description: 'Sit on my face please!', size: '3', owner: user2)
+item6.photos.attach(io: File.open("app/assets/images/chair2.jpg"),filename: "chair2.jpg")
+item6.save!
+
+item7 = Item.new(name: 'an above average coffee table', description: 'let me hold your mug', size: '4', owner: user3)
+item7.photos.attach(io: File.open("app/assets/images/coffee-table.jpg"),filename: "coffee-table.jpg")
+item7.save!
+
+item8 = Item.new(name: 'old picture frames', description: '', size: '1', owner: user4)
+item8.photos.attach(io: File.open("app/assets/images/picture-frame.jpg"),filename: "picture-frame.jpg")
+item8.save!
+
+item7 = Item.new(name: 'Desk', description: 'for study', size: '5', owner: user3)
+item7.photos.attach(io: File.open("app/assets/images/desk.jpg"),filename: "desk.jpg")
+item7.save!
+
+item8 = Item.new(name: 'plant', description: '', size: '2', owner: user1)
+item8.photos.attach(io: File.open("app/assets/images/Plant.jpg"),filename: "Plant.jpg")
+item8.save!
+
 puts "Adding trades..."
 trade1 =Trade.create!(item_1: item1, item_2: item2)
 trade2 = Trade.create!(item_1: item3, item_2: item4)

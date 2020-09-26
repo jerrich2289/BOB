@@ -5,6 +5,8 @@ class Trade < ApplicationRecord
 #   belongs_to :user
 #   has_many :photos, dependent: :destroy
 # end
+
+
   def random
     all.shuffle.first
   end
