@@ -11,8 +11,6 @@
     <%= f.input :name, label: 'Item name' %>
     <%= f.input :description, as: :text, label: 'Description (optional)' %>
     <%= f.input :size, collection: 1..6, as: :select, label: 'Your items size is equal to or larger than a ...' %>
-      <%#= f.select :size, options,  %>
-    <%#= end %>
     <%= f.button :submit %>
   <% end %>
 </div>
