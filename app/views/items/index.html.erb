@@ -20,11 +20,22 @@
             </span>
              </ul>
             <p><%=current_user.address%></p>
-          <%=image_tag("add_photo.jpg", :class => "avatar-120-add-item")%>
+
+
+          <% unless current_user.items %>
           <p class="size-18">Add your first item</p>
+          <% end %>
+          <% current_user.items.each do |item| %>
+          <%=cl_image_tag item.photos.last.key, class:"dashboard-item" if item.photos.attached?%>
+          <% end %>
+
+                    <% unless current_user.items.length >= 3%>
+          <%=image_tag("add_photo.jpg", :class => "avatar-120-add-item")%>
+          <% end %>
         </div>
     </div>
 </div>
+
 
 
 <!-- <input type="file" accept="image/*">
