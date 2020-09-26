@@ -3,10 +3,6 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-
-  # item-infoen kommer inn til create som innholdet inni params.
-  # Dette må så filtreres gjennom strong_params før det tildeles
-  # new_item.
   def create
     @new_item = Item.new(strong_params)
     @new_item.owner = current_user
@@ -16,6 +12,11 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+  end
+
+  def show
+    @item = Item.find(params[:id])
+    @user = User.find(@item.owner_id)
   end
 
   def dummy

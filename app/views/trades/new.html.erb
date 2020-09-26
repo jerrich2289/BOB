@@ -25,9 +25,11 @@
         </div>
       <br>
         <div class= 'game-btn'>
-          <span class="material-icons">
-            home
-
+          <%= link_to items_path do %>
+            <span class="material-icons">
+              home
+            </span>
+          <% end %>
         </div>
          <div class= 'game-btn' onclick="window.location.href = '/trades/new'">
           <span>

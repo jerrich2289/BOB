@@ -1,0 +1,16 @@
+
+<div class="container">
+  <h1> <%= @item.name %></h1>
+  <% @item.photos.each do |photo| %>
+    <%=image_tag photo, class: 'game-card' %>
+  <% end %>
+
+  <p> Description: <%= @item.description %> </p>
+  <p> Owned by a gentleperson with the name:  <strong> <%= @user.name %> </strong> </p>
+  <p> Location:  <strong> <%= @user.add ress %> </strong> </p>
+  <p> Added on: <%= @item.created_at %> </p>
+  <%= link_to "Back to item index page", items_path %>
+</div>
+<%# User avatars don't exist yet %>
+<%# @user.photo.attached? %>
+<%#= raise %>
