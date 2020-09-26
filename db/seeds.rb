@@ -17,15 +17,22 @@ user2 = User.create!(name: "Better8", email: "email@email.com", password: 'passw
 user3 = User.create!(name: "Swapsy22", email: "swapsy@test.com",  password: "password", address: "Oslo, Norway")
 user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password", address: "Oslo, Norway")
 
-puts "Adding items..."
-item1 = Item.create!(name: "chair", description: "I am an average chair", size: "3", owner: user1,)
+puts "Adding items...
+item1 = Item.new(name: "chair", description: "I am an average chair", size: "3", owner: user1,)
 item1.photo.attach(io: File.open("app/assets/images/preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg"),filename: "preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg")
-item2 = Item.create!(name: 'broken window', description: 'Somewone ran into me', size: '4', owner: user2)
+item1.save!
+
+item2 = Item.new(name: 'broken window', description: 'Somewone ran into me', size: '4', owner: user2)
 item2.photo.attach(io: File.open("app/assets/images/broken-window-79750272-adobe.jpeg"),filename: "broken-window-79750272-adobe.jpeg")
-item3 = Item.create!(name: "hair brush", description: "I am over used but muched loved", size: "1", owner: user3)
+item2.save!
+
+item3 = Item.new(name: "hair brush", description: "I am over used but muched loved", size: "1", owner: user3)
 item3.photo.attach(io: File.open("app/assets/images/girl-hairbrush-used-isolated-white-background-36490657.jpg"),filename: "girl-hairbrush-used-isolated-white-background-36490657.jpg")
-item4 = Item.create!(name: 'lamp shade', description: 'I prefer to be worn as a hat', size: '2', owner: user4)
+item3.save!
+
+item4 = Item.new(name: 'lamp shade', description: 'I prefer to be worn as a hat', size: '2', owner: user4)
 item4.photo.attach(io: File.open("app/assets/images/Lampshade.jpg"),filename: "Lampshade.jpg")
+item4.save!
 
 puts "Adding trades..."
 trade1 =Trade.create!(item_1: item1, item_2: item2)
