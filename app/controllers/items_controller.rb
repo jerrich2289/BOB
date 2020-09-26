@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
   private
 
   def strong_params
-    params.require(:item).permit(:name, :description, :photo, :size)
+    params.require(:item).permit(:name, :description, :size, photos: [])
   end
 
 end
