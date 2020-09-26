@@ -1,0 +1,18 @@
+
+<div class="container">
+  <h1> <%= @item.name %></h1>
+  <% @item.photos.each do |photo| %>
+    <%=image_tag photo, class: 'game-card' %>
+  <% end %>
+
+  <p> Description: <%= @item.description %> </p>
+
+  <p> Owned by a gentleperson with the name:  <strong> <%= @user.name %> </strong> </p>
+
+  <p> Location:  <strong> <%= @user.address %> </strong> </p>
+</div>
+<%# User avatars don't exist yet %>
+<%# @user.photo.attached? %>
+<%#= raise %>
+
+</div>
