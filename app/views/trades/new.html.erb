@@ -31,8 +31,8 @@
             </span>
           <% end %>
         </div>
-         <div class= 'game-btn'>
-          <span class="material-icons">
+         <div class= 'game-btn' onclick="window.location.href = '/trades/new'">
+          <span>
             skip
           </span>
         </div>
@@ -45,10 +45,17 @@
                 <% else %>
               <a>Shuiffle for a better match</a>
             <% end %>
-            <br>
+            </div>
+        <%= form_with(model: @trade) do |f| %>
+        <%= f.hidden_field :item_1_id %>
+        <%= f.hidden_field :item_2_id %>
+        <%= f.submit "trade" %>
+        <% end %>
+      <br>
          </div>
     </div>
   </div>
 </div>
+<div>
 
 

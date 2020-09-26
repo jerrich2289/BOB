@@ -1,8 +1,8 @@
 class TradesController < ApplicationController
   def new
-    @user_item = Item.all.shuffle.first
-    @bigger_item = Item.where("size >= ?",@user_item.size).shuffle.first
-    @better_item = Item.all.shuffle.first
+    @user_item = current_user.items.shuffle.first
+    @bigger_item = Item.where("size >= ?",@user_item.size).where.not(owner_id: current_user.id).shuffle.first
+    @better_item = Item.where("size <= ?",@user_item.size).where.not(owner_id: current_user.id).shuffle.first
     @trade = Trade.new(item_1: @user_item, item_2: @bigger_item)
   end
 
