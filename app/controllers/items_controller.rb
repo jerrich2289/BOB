@@ -4,9 +4,9 @@ class ItemsController < ApplicationController
   end
 
 
-  # item-infoen kommer inn til create som innholdet inni params. 
-  # Dette må så filtreres gjennom strong_params før det tildeles 
-  # new_item. 
+  # item-infoen kommer inn til create som innholdet inni params.
+  # Dette må så filtreres gjennom strong_params før det tildeles
+  # new_item.
   def create
     @new_item = Item.new(strong_params)
     @new_item.owner = current_user
@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
   private
 
   def strong_params
-    params.require(:item).permit(:name, :description, :photo)
+    params.require(:item).permit(:name, :description, :size, photos: [])
   end
 
 end
