@@ -17,7 +17,7 @@ user2 = User.create!(name: "Better8", email: "email@email.com", password: 'passw
 user3 = User.create!(name: "Swapsy22", email: "swapsy@test.com",  password: "password", address: "Oslo, Norway")
 user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password", address: "Oslo, Norway")
 
-puts "Adding items...
+puts "Adding items..."
 item1 = Item.new(name: "chair", description: "I am an average chair", size: "3", owner: user1,)
 item1.photo.attach(io: File.open("app/assets/images/preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg"),filename: "preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg")
 item1.save!
