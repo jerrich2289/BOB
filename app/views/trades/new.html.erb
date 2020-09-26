@@ -5,7 +5,7 @@
   <div class='row justify-content-center d-flex'>
     <div class='col-10' align='center'>
           <div class="game-card">
-            <%= cl_image_tag @bigger_item.photo.key, class: 'card-img', alt: 'Bigger Item' %>
+            <%= cl_image_tag @bigger_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
               <% if @user_item.size >= @bigger_item.size %>
                 <a> Its bigger</a>
               <% else %>
@@ -21,7 +21,7 @@
 
       <br>
         <div>
-          <%= cl_image_tag @user_item.photo.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
+          <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
         </div>
       <br>
         <div class= 'game-btn'>
@@ -37,7 +37,7 @@
          <br>
         <br>
           <div class="game-card">
-            <%= cl_image_tag @better_item.photo.key, class: 'card-img', alt: 'Bigger Item' %>
+            <%= cl_image_tag @better_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
               <% if @user_item.size <= @better_item.size %>
               <a> Its better</a>
                 <% else %>
