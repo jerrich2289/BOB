@@ -43,7 +43,13 @@
                 <% else %>
               <a>Shuiffle for a better match</a>
             <% end %>
-            <br>
+            </div>
+        <%= form_with(model: @trade) do |f| %>
+        <%= f.hidden_field :item_1_id %>
+        <%= f.hidden_field :item_2_id %>
+        <%= f.submit "trade" %>
+        <% end %>
+      <br>
          </div>
     </div>
   </div>
