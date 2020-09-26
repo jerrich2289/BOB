@@ -19,19 +19,19 @@ user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password"
 
 puts "Adding items..."
 item1 = Item.new(name: "chair", description: "I am an average chair", size: "3", owner: user1,)
-item1.photo.attach(io: File.open("app/assets/images/preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg"),filename: "preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg")
+item1.photos.attach(io: File.open("app/assets/images/preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg"),filename: "preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg")
 item1.save!
 
 item2 = Item.new(name: 'broken window', description: 'Somewone ran into me', size: '4', owner: user2)
-item2.photo.attach(io: File.open("app/assets/images/broken-window-79750272-adobe.jpeg"),filename: "broken-window-79750272-adobe.jpeg")
+item2.photos.attach(io: File.open("app/assets/images/broken-window-79750272-adobe.jpeg"),filename: "broken-window-79750272-adobe.jpeg")
 item2.save!
 
 item3 = Item.new(name: "hair brush", description: "I am over used but muched loved", size: "1", owner: user3)
-item3.photo.attach(io: File.open("app/assets/images/girl-hairbrush-used-isolated-white-background-36490657.jpg"),filename: "girl-hairbrush-used-isolated-white-background-36490657.jpg")
+item3.photos.attach(io: File.open("app/assets/images/girl-hairbrush-used-isolated-white-background-36490657.jpg"),filename: "girl-hairbrush-used-isolated-white-background-36490657.jpg")
 item3.save!
 
 item4 = Item.new(name: 'lamp shade', description: 'I prefer to be worn as a hat', size: '2', owner: user4)
-item4.photo.attach(io: File.open("app/assets/images/Lampshade.jpg"),filename: "Lampshade.jpg")
+item4.photos.attach(io: File.open("app/assets/images/Lampshade.jpg"),filename: "Lampshade.jpg")
 item4.save!
 
 puts "Adding trades..."
