@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources 'trades', only: [:new, :create]
 
-  # get '/user' => "items#index", :as => :user_root
+  get '/items' => "items#index", :as => :user_root
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
