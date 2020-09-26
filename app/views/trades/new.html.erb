@@ -4,14 +4,17 @@
 <div class='land-pad'>
   <div class='row justify-content-center d-flex'>
     <div class='col-10' align='center'>
+         <%= link_to item_path(@bigger_item.id) do %>
+          
           <div class="game-card">
             <%= cl_image_tag @bigger_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
               <% if @user_item.size >= @bigger_item.size %>
-                <a> Its bigger</a>
+                <%# <a> Its bigger</a> %>
               <% else %>
               <a>Your item is not bigger</a>
             <% end %>
         </div>
+         <% end %>
         <%= form_with(model: @trade) do |f| %>
         <%= f.hidden_field :item_1_id %>
         <%= f.hidden_field :item_2_id %>
