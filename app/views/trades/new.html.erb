@@ -41,6 +41,7 @@
         </div>
          <br>
         <br>
+        <%= link_to item_path(@better_item.id) do %>
           <div class="game-card">
             <%= cl_image_tag @better_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
               <% if @user_item.size <= @better_item.size %>
@@ -48,7 +49,8 @@
                 <% else %>
               <a>Shuiffle for a better match</a>
             <% end %>
-            </div>
+          </div>
+        <% end %>
         <%= form_with(model: @trade) do |f| %>
         <%= f.hidden_field :item_1_id %>
         <%= f.hidden_field :item_2_id %>
