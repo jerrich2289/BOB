@@ -1,66 +1,65 @@
-
-
-<div class='container-div'><div class="container-btm"></div></div>
+<div class='container-div'>
+  <div class="container-btm"></div>
+</div>
 <div class='land-pad'>
   <div class='row justify-content-center d-flex'>
     <div class='col-10' align='center'>
-         <%= link_to item_path(@bigger_item.id) do %>
-          
-          <div class="game-card">
-            <%= cl_image_tag @bigger_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
-              <% if @user_item.size >= @bigger_item.size %>
-                <%# <a> Its bigger</a> %>
-              <% else %>
-              <a>Your item is not bigger</a>
-            <% end %>
-        </div>
-         <% end %>
-        <%= form_with(model: @trade) do |f| %>
-        <%= f.hidden_field :item_1_id %>
-        <%= f.hidden_field :item_2_id %>
-        <%= f.submit "trade" %>
-        <% end %>
-
-
-      <br>
-        <div>
-          <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
-        </div>
-      <br>
-        <div class= 'game-btn'>
-          <%= link_to items_path do %>
-            <span class="material-icons">
-              home
-            </span>
+      <%= link_to item_path(@bigger_item.id) do %>
+        <div class="game-card">
+          <%= cl_image_tag @bigger_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
+          <% if @user_item.size >= @bigger_item.size %>
+            <%# <a> Its bigger</a> %>
+          <% else %>
+            <a>Your item is not bigger</a>
           <% end %>
         </div>
-         <div class= 'game-btn' onclick="window.location.href = '/trades/new'">
-          <span>
-            skip
-          </span>
-        </div>
-         <br>
-        <br>
-        <%= link_to item_path(@better_item.id) do %>
-          <div class="game-card">
-            <%= cl_image_tag @better_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
-              <% if @user_item.size <= @better_item.size %>
-              <a> Its better</a>
-                <% else %>
-              <a>Shuiffle for a better match</a>
-            <% end %>
-          </div>
-        <% end %>
-        <%= form_with(model: @trade) do |f| %>
+      <% end %>
+      <%= form_with(model: @trade) do |f| %>
         <%= f.hidden_field :item_1_id %>
         <%= f.hidden_field :item_2_id %>
         <%= f.submit "trade" %>
-        <% end %>
+      <% end %>
       <br>
-         </div>
+      <div class="game-card">
+        <%= form_with(url: new_trade_path, method: "get", local: true) do |f| %>
+          <%= select_tag(:item_id, options_for_select(@all_items.pluck(:name, :id))) %>
+          <%= f.submit %>
+        <% end %>
+        <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
+      </div>
+      <br>
+      <div class= 'game-btn'>
+        <%= link_to items_path do %>
+          <span class="material-icons">
+            home
+          </span>
+        <% end %>
+      </div>
+      <div class= 'game-btn' onclick="window.location.href = '/trades/new'">
+        <span>
+          skip
+        </span>
+      </div>
+      <br>
+      <br>
+      <%= link_to item_path(@better_item.id) do %>
+        <div class="game-card">
+          <%= cl_image_tag @better_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
+          <% if @user_item.size <= @better_item.size %>
+            <a> Its better</a>
+          <% else %>
+            <a>Shuiffle for a better match</a>
+          <% end %>
+        </div>
+      <% end %>
+      <%= form_with(model: @trade) do |f| %>
+        <%= f.hidden_field :item_1_id %>
+        <%= f.hidden_field :item_2_id %>
+        <%= f.submit "trade" %>
+      <% end %>
+      <br>
     </div>
   </div>
 </div>
+</div>
 <div>
-
-
