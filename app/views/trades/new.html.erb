@@ -10,7 +10,7 @@
           <% if @user_item.size >= @bigger_item.size %>
             <%# <a> Its bigger</a> %>
           <% else %>
-            <a>Your item is not bigger</a>
+            <a></a>
           <% end %>
         </div>
       <% end %>
@@ -46,9 +46,9 @@
         <div class="game-card">
           <%= cl_image_tag @better_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
           <% if @user_item.size <= @better_item.size %>
-            <a> Its better</a>
+            <a></a>
           <% else %>
-            <a>Shuiffle for a better match</a>
+            <a></a>
           <% end %>
         </div>
       <% end %>
