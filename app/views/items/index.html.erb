@@ -30,9 +30,9 @@
 
 
           <% current_user.items.each do |item| %>
-          <%= link_to item_path(item.id) do %>
-          <%=cl_image_tag item.photos.last.key, class:"dashboard-item" if item.photos.attached?%>
-          <% end %>
+            <%= link_to item_path(item.id) do %>
+              <%=cl_image_tag item.photos.last.key, class:"dashboard-item" if item.photos.attached?%>
+            <% end %>
           <% end %>
 
           <%= link_to new_item_path do %>
