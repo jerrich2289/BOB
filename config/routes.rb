@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#landing'
 
-  resources 'trades', only: [:new, :create]
-
-  resources 'chats', only: [:new, :create]
+  resources 'trades', only: [:new, :create, :index, :show]
 
   get '/items' => "items#index", :as => :user_root
 
