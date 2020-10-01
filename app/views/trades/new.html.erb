@@ -20,11 +20,12 @@
         <%= f.submit "trade" %>
       <% end %>
       <br>
-      <div class="game-card">
+      <div>
         <%= form_with(url: new_trade_path, method: "get", local: true) do |f| %>
           <%= select_tag(:item_id, options_for_select(@all_items.pluck(:name, :id))) %>
-          <%= f.submit %>
+          <%= f.submit "select" %>
         <% end %>
+        <br>
         <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
       </div>
       <br>
