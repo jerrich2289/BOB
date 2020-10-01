@@ -2,14 +2,14 @@
 <html>
   <head>
     <title>Bigger Or Better - Trade your stuff!</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Dont throw out your stuff! Trade it for something bigger or better.">
     <meta charset="utf-8">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+      rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -19,20 +19,21 @@
   <body>
     <%# <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <p class='notice'><%= notice %></p>
-    <p class='alert'><%= alert %></p>
-    <%= yield %>
-<% if current_user%>
-      <footer>
+      <p class='notice'><%= notice %></p>
+      <p class='alert'><%= alert %></p>
+      <%= yield %>
+    <% if current_user%>
+
+    <footer>
       <nav class="nav">
-        <a href="#" class="nav__link"onclick="window.location.href = ">
+        <a href="#" class="nav__link"onclick="window.location.href = '/trades/index'">
           <i class="material-icons nav__icon">chat_bubble_outline</i>
           </span class="nav__text">Chat</span>
         </a>
-        <a href="#" class="nav__link" onclick="window.location.href = '/trades/new'">
-          <i class="material-icons nav__icon" >attach_file</i>
-          </span class="nav__text">Play</span>
-        </a>
+          <a href="#" class="nav__link" onclick="window.location.href = '/trades/new'">
+            <i class="material-icons nav__icon" >attach_file</i>
+            </span class="nav__text">Play</span>
+          </a>
         <a href="#" class="nav__link nav__link--active" onclick="window.location.href = '/items'">
           <i class="material-icons nav__icon">home</i>
           </span class="nav__text">Home</span>
@@ -40,6 +41,6 @@
       </nav>
     </footer>
     <% end %>
-   </body>
+  </body>
 </html>
 
