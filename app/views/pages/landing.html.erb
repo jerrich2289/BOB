@@ -1,32 +1,30 @@
 <div class='land-pad'>
   <div class='row justify-content-center d-flex'>
     <div class='col-10' align='center'>
-
-    <%= image_tag("logo_copy.png", class:'land-logo') %>
-        <h5 class='land-tag-line'>Dont throw it out, trade it for something bigger or better.</h5>
-
+      <%= image_tag("logo_copy.png", class:'land-logo') %>
+      <h5 class='land-tag-line'>Dont throw it out, trade it for something bigger or better.</h5>
     </div>
   </div>
 </div>
-
 <br>
-
-  <div>
-    <div class='row justify-content-center d-flex'>
-      <div class='col-10' id="fuckin-btn">
-        <a href="/users/sign_in" class="get-started mx-auto d-block">GET STARTED</a>
+<div>
+  <div class='row justify-content-center d-flex'>
+    <div class='col-10' id="fuckin-btn">
+      <div class="get-started mx-auto d-block">
+        <%= link_to items_path do %>
+          GET STARTED
+        <% end %>
+        <%# <a href="/users/sign_in" class="get-started mx-auto d-block">GET STARTED</a> %>
       </div>
     </div>
   </div>
-
+</div>
 <br>
-
-  <div class='container'>
-    <div class='row justify-content-center d-flex'>
-      <div class='col-10' align='center'>
-        <p class='land-text'>BIGGER OR BETTER?
+<div class='container'>
+  <div class='row justify-content-center d-flex'>
+    <div class='col-10' align='center'>
+      <p class='land-text'>BIGGER OR BETTER?
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
     </div>
- </div>
- 
+  </div>
+</div>

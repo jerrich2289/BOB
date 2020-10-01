@@ -1,47 +1,37 @@
-
-<%= #link_to "Back to landing page", root_path %>
-
 <div class='row justify-content-center d-flex'>
-
 </div>
 </div>
 <div class='container'>
-    <div class='row justify-content-center d-flex'>
-      <div class='col-10' align='center'>
-          <%=image_tag("Jazz.jpg", :class => "avatar-120")%>
-            <h5><b>Hello <%=current_user.name%>!</b></h5>
-            <ul>
-            <span class="material-icons" id="stars">
-              <li>grade</li>
-              <li>grade</li>
-              <li>grade</li>
-              <li>grade</li>
-              <li>star_outline</li>
-            </span>
-             </ul>
-            <p><%=current_user.address%></p>
-
-          <% if current_user.items.length >= 10 %>
-            <p class="size-18"><strong>You have reached the maximum number of items. <br>
+  <div class='row justify-content-center d-flex'>
+    <div class='col-10' align='center'>
+      <%=image_tag("Jazz.jpg", :class => "avatar-120")%>
+      <h5><b>Hello <%=current_user.name%>!</b></h5>
+      <ul>
+        <span class="material-icons" id="stars">
+          <li>grade</li>
+          <li>grade</li>
+          <li>grade</li>
+          <li>grade</li>
+          <li>star_outline</li>
+        </span>
+      </ul>
+      <p><%=current_user.address%></p>
+      <% if current_user.items.length >= 10 %>
+        <p class="size-18"><strong>You have reached the maximum number of items. <br>
             Delete an item to upload a different item.</strong></p>
-          <% elsif current_user.items == nil %>
-            <p class="size-18">Add your first item</p>
-          <% end %>
-
-          <% current_user.items.each do |item| %>
-           <%=cl_image_tag item.photos.last.key, class:"dashboard-item" if item.photos.attached?%>
-             <%= link_to item_path(item.id) do %>
-               <%=cl_image_tag item.photos.last.key, class:"dashboard-item" if item.photos.attached?%>
-             <% end %>
-           <% end %>
-
-          <%= link_to new_item_path do %>
-            <% unless current_user.items.length >= 10%>
-              <%=image_tag("add_photo.jpg", :class => "avatar-120-add-item")%>
-            <% end %>
-          <% end %>
-
-        </div>
+      <% elsif current_user.items == nil %>
+        <p class="size-18">Add your first item</p>
+      <% end %>
+      <% current_user.items.each do |item| %>
+        <%= link_to item_path(item.id) do %>
+          <%=cl_image_tag item.photos.last.key, class:"dashboard-item" if item.photos.attached?%>
+        <% end %>
+      <% end %>
+      <%= link_to new_item_path do %>
+        <% unless current_user.items.length >= 10%>
+          <%=image_tag("add_photo.jpg", :class => "avatar-120-add-item")%>
+        <% end %>
+      <% end %>
     </div>
+  </div>
 </div>
-
