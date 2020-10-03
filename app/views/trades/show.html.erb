@@ -1,1 +1,19 @@
 <h1>Welcome to your personal chat with User ...</h1>
+<h1>Chat <%=@trade.id%> </h1>
+
+<div id="messages" data-trade-id="<%= @trade.id %>">
+  <% @trade.messages.each do |message| %>
+    <div class="message-container" id="message-<%= message.id %>">
+      <i class="author">
+        <span><%= message.user.name %></span>
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= message.message %></p>
+    </div>
+  <% end %>
+</div>
+
+<!-- <form action="/trades"></form> -->
+<%= simple_form_for [@trade, @message], remote: true do |f| %>
+  <%= f.input :message, label: false, placeholder: "Message" %>
+<% end %>

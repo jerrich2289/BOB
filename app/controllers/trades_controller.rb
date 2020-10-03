@@ -11,10 +11,33 @@ class TradesController < ApplicationController
   def create
     Trade.create!(trade_params)
     redirect_to new_trade_path
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @messages = Message.new(message_params)
+    @messages.chatroom = @chatroom
+    @messages.user = current_user
+
+    if @message.save
+      redirect_to chatroom_path(@chatroom)
+    else
+      render 'trades/show'
+    end
+  end
+
+  def show
+    @trade = Trade.find(params[:id])
+    @message = Message.new
+  end
+
+  def index
   end
 
   def trade_params
     params.require(:trade).permit(:item_1_id, :item_2_id)
   end
+
+  def message_params
+    pararms.require(:message).permit(:content)
+  end
+
 end
 
