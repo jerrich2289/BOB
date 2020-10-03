@@ -16,7 +16,7 @@
       <%= f.input :description, as: :text, label: 'Description (optional)' %>
     <%#= f.input :size, collection: 1..6, as: :select, label: 'Your items size is equal to or larger than a ...' %>
     <div class='container-sizechart'>
-      <h2 class='text-center' id='body-font'> Would you say your <b><%=@name%> is equal to or smaller than:</h2>
+      <h2 class='text-center' id='body-font'> Would you say your item is equal to or smaller than:</h2>
     </div>
 
     <div class='container-sizechart'>
@@ -49,7 +49,8 @@
       <%= link_to new_trade_path do %>
       <%= f.button :submit, :class => 'button lg-btn'%>
       <% end %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
