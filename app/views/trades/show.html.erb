@@ -16,4 +16,5 @@
 <!-- <form action="/trades"></form> -->
 <%= simple_form_for [@trade, @message], remote: true do |f| %>
   <%= f.input :message, label: false, placeholder: "Message" %>
+  <%= f.submit %>
 <% end %>
