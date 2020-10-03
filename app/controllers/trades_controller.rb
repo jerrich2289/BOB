@@ -1,4 +1,6 @@
 class TradesController < ApplicationController
+  before_action :show_navbar, only: [:new]
+
   def new
     @all_items = current_user.items
     @user_item = @all_items.shuffle.first unless params[:item_id]
