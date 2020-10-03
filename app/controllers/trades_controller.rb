@@ -1,4 +1,6 @@
 class TradesController < ApplicationController
+  before_action :show_navbar, only: [:new]
+
   def new
     @all_items = current_user.items
     @user_item = @all_items.shuffle.first unless params[:item_id]
@@ -21,7 +23,15 @@ class TradesController < ApplicationController
     end
     redirect_to new_trade_path
   end
-
+  
+  def show
+    @trade = Trade.find(params[:id])
+    @message = Message.new
+  end
+  
+  def index
+  end
+  
   private
 
   def trade_params
@@ -31,8 +41,6 @@ class TradesController < ApplicationController
   def trade_params_reversed
     {item_1_id: trade_params[:item_2_id], item_2_id: trade_params[:item_1_id]}
   end
-
-  
 
 end
 
