@@ -21,6 +21,7 @@ class TradesController < ApplicationController
   end
 
   def index
+    @trades = current_user.trades
   end
 
   def trade_params
