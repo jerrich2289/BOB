@@ -20,6 +20,7 @@ user3 = User.create!(name: "Karin", email: "karin@email.com",  password: "passwo
 user3.photo.attach(io: File.open("app/assets/images/karin.png"),filename: "karin.png")
 user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password", address: "Låkehavna, Norway")
 user4.photo.attach(io: File.open("app/assets/images/jazz.jpg"),filename: "jazz.jpg")
+
 puts "Adding items..."
 item1 = Item.new(name: "chair", description: "I am an average chair", size: "3", owner: user1,)
 item1.photos.attach(io: File.open("app/assets/images/preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg"),filename: "preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg")

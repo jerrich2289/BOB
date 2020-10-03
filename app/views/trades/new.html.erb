@@ -14,7 +14,7 @@
           <% end %>
         </div>
       <% end %>
-      <%= form_with(model: @trade) do |f| %>
+      <%= form_with(model: @bigger_trade) do |f| %>
         <%= f.hidden_field :item_1_id %>
         <%= f.hidden_field :item_2_id %>
         <%= f.submit "trade" %>
@@ -53,7 +53,7 @@
           <% end %>
         </div>
       <% end %>
-      <%= form_with(model: @trade) do |f| %>
+      <%= form_with(model: @better_trade) do |f| %>
         <%= f.hidden_field :item_1_id %>
         <%= f.hidden_field :item_2_id %>
         <%= f.submit "trade" %>
@@ -62,5 +62,3 @@
     </div>
   </div>
 </div>
-</div>
-<div>
