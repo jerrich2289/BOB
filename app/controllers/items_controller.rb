@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :show_navbar, only: [:new, :show]
+
   def new
     @item = Item.new
   end
