@@ -7,15 +7,14 @@ class TradesController < ApplicationController
     @user_item ||= @all_items.find(params[:item_id])
     @bigger_item = Item.where("size >= ?",@user_item.size).where.not(owner_id: current_user.id).shuffle.first
     @better_item = Item.where("size <= ?",@user_item.size).where.not(owner_id: current_user.id).shuffle.first
-    @trade = Trade.new(item_1: @user_item, item_2: @bigger_item)
+    @bigger_trade = Trade.new(item_1: @user_item, item_2: @bigger_item)
+    @better_trade = Trade.new(item_1: @user_item, item_2: @better_item)
   end
 
   def create
     if exists = Trade.find_by(trade_params_reversed)
-      # this one means the trade has already been swiped true by the other item's user
-      # this one should mark the trade as matched and redirect to the match page
       exists.update(matched: true)
-      redirect_to #the chat branch
+      redirect_to trades_path
       return #nil
     end
     unless Trade.find_by(trade_params) #find_or_create_by!
