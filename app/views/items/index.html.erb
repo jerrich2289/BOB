@@ -19,7 +19,7 @@
       <% if current_user.items.length >= 10 %>
         <p class="size-18"><strong>You have reached the maximum number of items. <br>
             Delete an item to upload a different item.</strong></p>
-      <% elsif current_user.items == items.length %>
+      <% elsif current_user.items.empty? %>
         <p class="size-18">Add your first item</p>
       <% end %>
       <% current_user.items.each do |item| %>

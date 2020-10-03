@@ -12,11 +12,14 @@ Item.destroy_all
 User.destroy_all
 
 puts "Adding users..."
-user1 = User.create!(name: "Bigger10", email: "chickenbreastssss@test.com", password: "password", address: "Oslo, Norway")
-user2 = User.create!(name: "Better8", email: "email@email.com", password: 'password', address: "Oslo, Norway")
-user3 = User.create!(name: "Swapsy22", email: "swapsy@test.com",  password: "password", address: "Oslo, Norway")
-user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password", address: "Oslo, Norway")
-
+user1 = User.create!(name: "Steve", email: "steve@email.com", password: "password", address: "Ski, Norway")
+user1.photo.attach(io: File.open("app/assets/images/steve.jpg"),filename: "steve.jpg")
+user2 = User.create!(name: "Bill", email: "bill@email.com", password: 'password', address: "Bergen, Norway")
+user2.photo.attach(io: File.open("app/assets/images/bill.png"),filename: "bill.png")
+user3 = User.create!(name: "Karin", email: "karin@email.com",  password: "password", address: "Oslo, Norway")
+user3.photo.attach(io: File.open("app/assets/images/karin.png"),filename: "karin.png")
+user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password", address: "Låkehavna, Norway")
+user4.photo.attach(io: File.open("app/assets/images/jazz.jpg"),filename: "jazz.jpg")
 puts "Adding items..."
 item1 = Item.new(name: "chair", description: "I am an average chair", size: "3", owner: user1,)
 item1.photos.attach(io: File.open("app/assets/images/preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg"),filename: "preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg")
@@ -64,8 +67,8 @@ trade2 = Trade.create!(item_1: item3, item_2: item4)
 
 puts "Adding messages..."
 Message.create!(message: 'hey man, I am really keen to pick up my broken window', trade:trade1, user: user1)
-Message.create!(message: 'Ill see you at midnight', trade: trade2, user: user2)
-Message.create!(message: 'I dont think I want to give up my item. Sorry', trade:trade1, user: user3)
+Message.create!(message: 'Ill see you at midnight', trade: trade1, user: user2)
+Message.create!(message: 'I dont think I want to give up my item. Sorry', trade:trade2, user: user3)
 Message.create!(message: 'Hey, Lets set up a time to make the trade', trade:trade2, user: user4)
 
 puts "Done!"
