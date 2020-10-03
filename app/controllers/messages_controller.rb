@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
-
-def create
+  def create
     @trade = Trade.find(params[:trade_id])
     @message = Message.new(message_params)
     @message.trade = @trade
@@ -11,7 +10,7 @@ def create
     else
       render 'trades/show'
     end
-end
+  end
 
   def message_params
     params.require(:message).permit(:message)
