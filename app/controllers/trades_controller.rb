@@ -9,12 +9,28 @@ class TradesController < ApplicationController
   end
 
   def create
-    Trade.create!(trade_params)
+    Trade.find_by(trade_params)
+      # this one means the trade has already been swiped true by the current_user
+    Trade.find_by(trade_params_reversed)
+      # this one means the trade has already been swiped true by the other item's user
+    else create new one
+      Trade.create!(trade_params)
+    end
+    
     redirect_to new_trade_path
   end
+
+  private
 
   def trade_params
     params.require(:trade).permit(:item_1_id, :item_2_id)
   end
+
+  def trade_params_reversed
+    {item_1_id: trade_params[:item_2_id], item_2_id: trade_params[:item_1_id]}
+  end
+
+  
+
 end
 
