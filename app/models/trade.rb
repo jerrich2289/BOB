@@ -11,5 +11,3 @@ class Trade < ApplicationRecord
     all.shuffle.first
   end
 end
-
-
