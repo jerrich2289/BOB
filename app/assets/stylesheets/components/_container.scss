@@ -25,3 +25,17 @@
   position: relative;
 
 }
+
+.container-sizechart {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px;
+  width: 100%;
+  margin: 0 auto;
+  background: #FFFFFF;
+
+}
+
+.arrow .container {
+  margin-top: 150px;
+}
