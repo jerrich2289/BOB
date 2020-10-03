@@ -1,5 +1,5 @@
 class TradesController < ApplicationController
-  before_action :show_navbar, only: [:new]
+  before_action :show_navbar, only: [:index, :show]
 
   def new
     @all_items = current_user.items
