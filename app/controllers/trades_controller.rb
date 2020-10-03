@@ -15,8 +15,19 @@ class TradesController < ApplicationController
     redirect_to new_trade_path
   end
 
+  def show
+    @trade = Trade.find(params[:id])
+    @message = Message.new
+  end
+
+  def index
+  end
+
   def trade_params
     params.require(:trade).permit(:item_1_id, :item_2_id)
   end
+
+
+
 end
 
