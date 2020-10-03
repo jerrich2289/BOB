@@ -23,6 +23,7 @@ class TradesController < ApplicationController
     end
     redirect_to new_trade_path
   end
+
   
   def show
     @trade = Trade.find(params[:id])
