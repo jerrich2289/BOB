@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :show_navbar, only: [:new, :show, ]
   def create
     @trade = Trade.find(params[:trade_id])
     @message = Message.new(message_params)
