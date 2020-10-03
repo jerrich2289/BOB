@@ -12,14 +12,6 @@ Item.destroy_all
 User.destroy_all
 
 puts "Adding users..."
-<<<<<<< HEAD
-user1 = User.create!(name: "Bigger10", email: "chickenbreastssss@test.com", password: "password", address: "Oslo, Norway")
-user2 = User.create!(name: "Better8", email: "email@email.com", password: 'password', address: "Oslo, Norway")
-user3 = User.create!(name: "Swapsy22", email: "swapsy@test.com",  password: "password", address: "Oslo, Norway")
-user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password", address: "Oslo, Norway")
-user4.photo.attach(io: File.open("app/assets/images/Jazz.jpg"),filename: "Jazz.jpg")
-
-=======
 user1 = User.create!(name: "Steve", email: "steve@email.com", password: "password", address: "Ski, Norway")
 user1.photo.attach(io: File.open("app/assets/images/steve.jpg"),filename: "steve.jpg")
 user2 = User.create!(name: "Bill", email: "bill@email.com", password: 'password', address: "Bergen, Norway")
@@ -28,7 +20,7 @@ user3 = User.create!(name: "Karin", email: "karin@email.com",  password: "passwo
 user3.photo.attach(io: File.open("app/assets/images/karin.png"),filename: "karin.png")
 user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password", address: "Låkehavna, Norway")
 user4.photo.attach(io: File.open("app/assets/images/jazz.jpg"),filename: "jazz.jpg")
->>>>>>> master
+
 puts "Adding items..."
 item1 = Item.new(name: "chair", description: "I am an average chair", size: "3", owner: user1,)
 item1.photos.attach(io: File.open("app/assets/images/preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg"),filename: "preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg")
