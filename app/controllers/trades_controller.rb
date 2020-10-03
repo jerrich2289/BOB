@@ -9,14 +9,16 @@ class TradesController < ApplicationController
   end
 
   def create
-    Trade.find_by(trade_params)
-      # this one means the trade has already been swiped true by the current_user
-    Trade.find_by(trade_params_reversed)
+    if exists = Trade.find_by(trade_params_reversed)
       # this one means the trade has already been swiped true by the other item's user
-    else create new one
+      # this one should mark the trade as matched and redirect to the match page
+      exists.update(matched: true)
+      redirect_to #the chat branch
+      return #nil
+    end
+    unless Trade.find_by(trade_params) #find_or_create_by!
       Trade.create!(trade_params)
     end
-    
     redirect_to new_trade_path
   end
 
