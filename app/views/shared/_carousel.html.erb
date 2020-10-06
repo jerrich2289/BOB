@@ -1,22 +1,22 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <% @item.photos.each do |photo| %>
-    <% if @item.photos.index(photo) == 0 %>
-    <li data-target="#carouselExampleIndicators" data-slide-to=<%= @item.photos.index(photo).to_s %> class="active"></li>
-    <% else %>
-     <li data-target="#carouselExampleIndicators" data-slide-to=<%= @item.photos.index(photo).to_s %>></li>
-    <% end %>
-    <% end %>
+      <% if @item.photos.index(photo) == 0 %>
+        <li data-target="#carouselExampleIndicators" data-slide-to=<%= @item.photos.index(photo).to_s %> class="active"></li>
+        <% else %>
+          <li data-target="#carouselExampleIndicators" data-slide-to=<%= @item.photos.index(photo).to_s %>></li>
+        <% end %>
+      <% end %>
   </ol>
 
   <div class="carousel-inner">
        <% @item.photos.each do |photo| %>
-        <% if @item.photos.index(photo) == 0 %>x
+        <% if @item.photos.index(photo) == 0 %>
     <div class="carousel-item active" >
       <% else %>
          <div class="carousel-item" >
           <% end %>
-      <%=cl_image_tag photo.key, class:"d-block w-100" %>
+      <%=cl_image_tag photo.key, class:'card-img' %>
     </div>
     <% end %>
 
