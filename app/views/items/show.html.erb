@@ -1,9 +1,7 @@
 
 <div class="container">
   <h1> <%= @item.name %></h1>
-  <% @item.photos.each do |photo| %>
-    <%=image_tag photo, class: 'game-card' %>
-  <% end %>
+  <%= render "shared/carousel" %>
 
   <p> Description: <%= @item.description %> </p>
   <p> Owned by a gentleperson with the name:  <strong> <%= @user.name %> </strong> </p>

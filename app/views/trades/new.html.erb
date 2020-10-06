@@ -4,14 +4,11 @@
 <div class='land-pad'>
   <div class='row justify-content-center d-flex'>
     <div class='col-10' align='center'>
-      <%= link_to item_path(@bigger_item.id) do %>
+      <%= link_to item_path(@bigger_item) do %>
         <div class="game-card">
-          <%= cl_image_tag @bigger_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
-          <% if @user_item.size >= @bigger_item.size %>
-            <%# <a> Its bigger</a> %>
-          <% else %>
-            <a></a>
-          <% end %>
+          <%#= cl_image_tag @bigger_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
+          <% @item = @bigger_item %>
+         <%= render "shared/carousel" %>
         </div>
       <% end %>
       <%= form_with(model: @bigger_trade) do |f| %>
@@ -45,12 +42,9 @@
       <br>
       <%= link_to item_path(@better_item.id) do %>
         <div class="game-card">
-          <%= cl_image_tag @better_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
-          <% if @user_item.size <= @better_item.size %>
-            <a></a>
-          <% else %>
-            <a></a>
-          <% end %>
+          <%#= cl_image_tag @better_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
+          <% @item = @better_item %>
+          <%= render "shared/carousel" %>
         </div>
       <% end %>
       <%= form_with(model: @better_trade) do |f| %>
