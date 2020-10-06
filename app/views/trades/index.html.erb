@@ -1,6 +1,6 @@
 <h1>Welcome to your chats index</h1>
   <% @trades.each do |trade| %>
     <%= link_to trade_path(trade) do %>
-  Your Trades
+  <%=render "trade_list_item",message:trade.messages.last %>
     <% end %>
   <% end %>
