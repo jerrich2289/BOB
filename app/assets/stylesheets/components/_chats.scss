@@ -1,13 +1,25 @@
-.user-name a {
-font-size: 14px;
-text-decoration: none;
+.message-preview {
+border-bottom: 1px solid rgba(55,55,55,.25);
+padding-bottom: 8px;
 }
 
-.user-message a {
+.user-name {
 font-size: 14px;
 text-decoration: none;
+padding-left: 15px;
+align-items: center;
+color: inherit;
+}
+
+.user-message {
+font-size: 14px;
+padding-left: 15px;
+text-decoration: none;
+color: #77838F;
 }
 
 .user-name:hover {
 text-decoration: none;
+color: inherit;
 }
+

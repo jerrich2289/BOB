@@ -2,10 +2,15 @@
     <div class="title-white">
       Chats
 </div>
-<div class="d-flex">
-<%=image_tag(current_user.photo, :class => "avatar-55")%>
-<div class="user-name">
-<%= message.user.name%>
-<%=message.message %>
-</div>
+  <div class="d-flex message-preview">
+    <%=image_tag(current_user.photo, :class => "avatar-55")%>
+   <div class="flex-column">
+    <div class="user-name">
+      <strong><%= message.user.name%></strong>
+    </div>
+    <div class="user-message">
+      <%=message.message %>
+    </div>
+    </div>
+  </div>
 </div>
