@@ -31,5 +31,18 @@ import dragula from "dragula";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  dragula([document.querySelector('#drag-bigger'), document.querySelector('#drag-better'), document.querySelector('#drag-middle')]);
+  const container = [document.querySelector('#drag-bigger'), document.querySelector('#drag-better'), document.querySelector('#drag-middle')];
+  const drake = dragula(container, {
+    moves: function (el, source, handle, sibling) {
+      return source.id === "drag-middle"; // elements are always draggable by default
+    }
+  });
+
+  drake.on("drop", (el, target, sibling) => {
+    if (target.id === "drag-bigger") {
+      formBigger.submit()
+    } else if (target.id === "drag-better") {
+      formBetter.submit()
+    }
+  });
 });
