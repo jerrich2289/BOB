@@ -29,6 +29,29 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  document.querySelector('input[type=file]').addEventListener("change", previewFiles)
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+function previewFiles() {
+  var preview = document.querySelector('#preview');
+  var files   = document.querySelector('input[type=file]').files;
+  function readAndPreview(file) {
+    // Make sure `file.name` matches our extensions criteria
+    if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+      var reader = new FileReader();
+      reader.addEventListener("load", function () {
+        var image = new Image();
+        image.height = 100;
+        image.title = file.name;
+        image.src = this.result;
+        preview.appendChild( image );
+      }, false);
+      reader.readAsDataURL(file);
+    }
+  }
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+}
