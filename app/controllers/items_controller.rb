@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     @new_item = Item.new(strong_params)
     @new_item.owner = current_user
     @new_item.save!
-    redirect_to items_path
+    redirect_to new_trade_path(item_id: @new_item.id)
   end
 
   def index
