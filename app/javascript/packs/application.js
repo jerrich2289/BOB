@@ -24,6 +24,10 @@ require("channels")
 
 // External imports
 import "bootstrap";
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

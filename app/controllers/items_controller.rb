@@ -16,9 +16,15 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
-  def show
+  # def show
+  #   @item = Item.find(params[:id])
+  #   @user = User.find(@item.owner_id)
+  #   redirect_to '/items/new', :notice => "Your item has been deleted"
+  # end
+
+  def destroy
     @item = Item.find(params[:id])
-    @user = User.find(@item.owner_id)
+    @item.destroy!
   end
 
   def dummy
