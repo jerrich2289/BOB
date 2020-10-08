@@ -9,7 +9,8 @@
 
     <div>
       <%= simple_form_for @item do |f| %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Upload more images' %>
+      <div id="preview"></div>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "outline-btn upload-btn-wrapper" }, id: "browse", label: 'Upload more images' %>
       <%= f.input :name, label: 'Item name' %>
       <%= f.input :description, as: :text, label: 'Description (optional)' %>
     <%#= f.input :size, collection: 1..6, as: :select, label: 'Your items size is equal to or larger than a ...' %>
@@ -18,36 +19,33 @@
     </div>
 
     <div class='container-sizechart'>
-      <button name="size" value="1">
+      <button name="item[size]" value="1">
         <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
       </button>
-      <button name="size" value="2">
-        <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
-      </button>
-    </div>
-
-    <div class='container-sizechart'>
-      <button name="size" value="3">
-        <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
-      </button>
-      <button name="size" value="4">
+      <button name="item[size]" value="2">
         <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
       </button>
     </div>
 
     <div class='container-sizechart'>
-      <button name="size" value="5">
+      <button name="item[size]" value="3">
         <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
       </button>
-      <button name="size" value="6">
+      <button name="item[size]" value="4">
         <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
       </button>
     </div>
+
     <div class='container-sizechart'>
-      <%= link_to new_trade_path do %>
-      <%= f.button :submit, :class => 'button lg-btn'%>
-      <% end %>
-      <% end %>
+      <button name="item[size]" value="5">
+        <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
+      </button>
+      <button name="item[size]" value="6">
+        <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
+      </button>
+    </div>
+   <% end %>
+
     </div>
   </div>
 </div>
