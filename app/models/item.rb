@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   before_save :image_count
   validates :photos, presence: true
   validates :name, presence: true
-  # validates :size, presence: true
+  validates :size, presence: true
   # validates :size, presence: true (once the sizing gets done then the turn on the validation)
 
 private

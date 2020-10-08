@@ -18,36 +18,32 @@
     </div>
 
     <div class='container-sizechart'>
-      <button name="size" value="1">
+      <button name="item[size]" value="1">
         <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
       </button>
-      <button name="size" value="2">
-        <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
-      </button>
-    </div>
-
-    <div class='container-sizechart'>
-      <button name="size" value="3">
-        <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
-      </button>
-      <button name="size" value="4">
+      <button name="item[size]" value="2">
         <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
       </button>
     </div>
 
     <div class='container-sizechart'>
-      <button name="size" value="5">
+      <button name="item[size]" value="3">
         <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
       </button>
-      <button name="size" value="6">
+      <button name="item[size]" value="4">
         <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
       </button>
     </div>
+
     <div class='container-sizechart'>
-      <%= link_to new_trade_path do %>
-      <%= f.button :submit, :class => 'button lg-btn'%>
-      <% end %>
-      <% end %>
+      <button name="item[size]" value="5">
+        <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
+      </button>
+      <button name="item[size]" value="6">
+        <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
+      </button>
+    </div>
+   <% end %>
 
     </div>
   </div>
