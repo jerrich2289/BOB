@@ -24,29 +24,46 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
+import dragula from "dragula";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  document.querySelector('input[type=file]').addEventListener("change", previewFiles)
+  const fileinput = document.querySelector('input[type=file]')
+  if (fileinput) {
+    fileinput.addEventListener("change", previewFiles)
+  }
   // Call your functions here, e.g:
   // initSelect2();
+  const container = [document.querySelector('#drag-bigger'), document.querySelector('#drag-better'), document.querySelector('#drag-middle')];
+  const drake = dragula(container, {
+    moves: function (el, source, handle, sibling) {
+      return source.id === "drag-middle"; // elements are always draggable by default
+    }
+  });
+
+  drake.on("drop", (el, target, sibling) => {
+    if (target.id === "drag-bigger") {
+      formBigger.submit()
+    } else if (target.id === "drag-better") {
+      formBetter.submit()
+    }
+  });
 });
 
 function previewFiles() {
   var preview = document.querySelector('#preview');
-  var files   = document.querySelector('input[type=file]').files;
+  var files = document.querySelector('input[type=file]').files;
   function readAndPreview(file) {
     // Make sure `file.name` matches our extensions criteria
-    if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+    if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
       var reader = new FileReader();
       reader.addEventListener("load", function () {
         var image = new Image();
         image.height = 100;
         image.title = file.name;
         image.src = this.result;
-        preview.appendChild( image );
+        preview.appendChild(image);
       }, false);
       reader.readAsDataURL(file);
     }
