@@ -1,4 +1,14 @@
-.container {
+.index-container {
+  margin-top: 130px;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.0796252);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  min-height: calc(100vh - 75px);
+}
+
+.chat-container {
   width: 100%;
   margin: 0 auto;
   background: #FFFFFF;
@@ -7,20 +17,6 @@
   border-top-right-radius: 25px;
   min-height: calc(100vh - 75px);
   overflow-y: scroll;
-}
-
-.container-btm {
-  width: 100%;
-  height: 275px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  background: #FFFFFF;
-  box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.0796252);
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
 }
 
 .container-div {
