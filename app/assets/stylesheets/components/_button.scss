@@ -80,6 +80,7 @@
   overflow: hidden;
   display: inline-block;
 }
+
 .btn-upload {
   border: 2px solid blue;
   color: gray;
@@ -100,6 +101,7 @@
   border-radius: 4px;
   object-size: fill;
 }
+
 .upload-btn-wrapper input[type=file] {
   position: absolute;
   left: 0;
@@ -109,3 +111,6 @@
   opacity: 0;
 }
 
+.width {
+  width: 100%;
+}
