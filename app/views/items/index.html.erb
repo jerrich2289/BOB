@@ -15,9 +15,9 @@
           <li>star_outline</li>
         </span>
       </ul>
-      <%# <div class="button sm-btn"> %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "logout-btn btn button sm-btn" %>
-      <%# </div> %>
+      <!-- <div class="button sm-btn">
+        <%#= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "logout-btn btn button sm-btn" %>
+      </div> -->
       <p><%=current_user.address%></p>
       <% if current_user.items.length >= 10 %>
         <p class="size-18"><strong>You have reached the maximum number of items. <br>
