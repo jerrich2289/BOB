@@ -16,28 +16,25 @@
     <%=favicon_link_tag%>
   </head>
   <body>
-    <%# <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <footer>
-      <% if @show_navbar %>
+    <% if @show_navbar %>
+      <footer>
         <nav class="nav">
-          <!-- <a href="#" class="nav__link"onclick="window.location.href = '/trades'"> -->
           <%= link_to trades_path, class: "nav__link" do %>
-            <i class="material-icons nav__icon">chat_bubble_outline</i></span class="nav__text">Chat</span>
-      <% end %>
-    </a>
-    <!--  <a href="#" class="nav__link" onclick="window.location.href = '/trades/new'"> -->
-    <%= link_to new_trade_path, class: "nav__link" do %>
-      <i class="material-icons nav__icon" >attach_file</i></span class="nav__text">Play</span>
-<% end %>
-</a>
-<!-- <a href="#" class="nav__link nav__link--active" onclick="window.location.href = '/items'"> -->
-<%= link_to items_path, class: "nav__link" do %>
-  <i class="material-icons nav__icon">home</i></span class="nav__text">Home</span>
-<% end %>
-</a>
-</nav>
-<% end %>
-</footer>
+            <i class="material-icons nav__icon">chat_bubble_outline</i>
+            <span class="nav__text">Chat</span>
+          <% end %>
+          <%= link_to new_trade_path, class: "nav__link" do %>
+            <i class="material-icons nav__icon" >attach_file</i>
+            <span class="nav__text">Play</span>
+          <% end %>
+          <%= link_to items_path, class: "nav__link" do %>
+            <i class="material-icons nav__icon">home</i>
+            <span class="nav__text">Home</span>
+          <% end %>
+        </nav>
+      </footer>
+    <% end %>
+  </body>
 </html>
