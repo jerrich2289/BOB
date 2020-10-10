@@ -1,7 +1,7 @@
 <%# Om jeg legge til en HTML-klasse: %>
 <%# , wrapper_html: { class: 'class_name' } %>
 <div class='arrow'>
-  <div class="container">
+  <div class="new-item-container">
     <div class="title-white">
       <a class="material-icons" href="javascript:history.back()">keyboard_backspace</a>
         <h1>Add item</h1>
@@ -19,7 +19,7 @@
     <div class='container-sizechart'>
       <h2 class='text-center' id='body-font'> Would you say your item is equal to or smaller than:</h2>
     </div>
-
+    <div class=wrapper>
     <div class='container-sizechart'>
       <button name="item[size]" value="1">
         <%=image_tag("fork.jpg", :class => "avatar-120")%>
@@ -45,10 +45,6 @@
       <button name="item[size]" value="6">
         <%=image_tag("Car.jpg", :class => "avatar-120")%>
       </button>
-    </div>
-    <%#= link_to "Delete", @item, :confirm => "Are you sure?", :method => :delete %>
-   <% end %>
-
     </div>
   </div>
 </div>

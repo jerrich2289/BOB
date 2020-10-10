@@ -2,6 +2,7 @@ class TradesController < ApplicationController
   before_action :show_navbar, only: [:index, :show]
 
   def new
+    return redirect_to items_path if current_user.items.empty?
     @all_items = current_user.items
     @user_item = @all_items.shuffle.first unless params[:item_id]
     @user_item ||= @all_items.find(params[:item_id])
