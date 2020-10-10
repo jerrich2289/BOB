@@ -13,7 +13,7 @@
       <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "outline-btn upload-btn-wrapper" }, id: "browse", label: 'Upload more images' %>
       <%= f.input :name, label: 'Item name' %>
       <%= f.input :description, as: :text, label: 'Description (optional)' %>
-    <%#= f.input :size, collection: 1..6, as: :select, label: 'Your items size is equal to or larger than a ...' %>
+      <%#= f.input :size, collection: 1..6, as: :select, label: 'Your items size is equal to or larger than a ...' %>
     <div class='container-sizechart'>
       <h2 class='text-center' id='body-font'> Would you say your item is equal to or smaller than:</h2>
     </div>
@@ -46,7 +46,7 @@
     </div>
 
     <%#= link_to "Delete", @item, :confirm => "Are you sure?", :method => :delete %>
-   <% end %>
+   <%# end %>
 
     </div>
   </div>
