@@ -1,4 +1,4 @@
-<div class='row justify-content-center d-flex'>
+<div id="trade-page-body" class='row justify-content-center d-flex'>
   <div class='col-10' align='center'>
     <%= link_to item_path(@bigger_item.id) do %>
       <div id="drag-bigger" class="game-card">
@@ -11,10 +11,12 @@
       <%= f.hidden_field :item_2_id %>
     <% end %>
     <div>
-      <%= form_with(url: new_trade_path, method: "get", local: true) do |f| %>
-        <%= select_tag(:item_id, options_for_select(@all_items.pluck(:name, :id))) %>
-        <%= f.submit "select" %>
-      <% end %>
+      <div id="selectForm" class="hidden_form">
+        <%= form_with(url: new_trade_path, method: "get", local: true) do |f| %>
+          <%= select_tag(:item_id, options_for_select(@all_items.pluck(:name, :id))) %>
+          <%= f.submit "select" %>
+        <% end %>
+      </div>
       <div class="trade-middle-container">
         <div class="trade-middle-left">
           <div class= 'game-btn'>
@@ -22,10 +24,8 @@
               <span class="material-icons">home</span>
             <% end %>
           </div>
-          <div class= 'game-btn'>
-            <%= link_to items_path do %>
-              <span class="material-icons">apps</span>
-            <% end %>
+          <div id="list-items-button" class= 'game-btn'>
+            <span class="material-icons">apps</span>
           </div>
         </div>
         <div id="drag-middle">
@@ -47,8 +47,14 @@
       <%= f.hidden_field :item_2_id %>
     <% end %>
   </div>
-  <div class="trade-items-list">
-    <p> hi outside page </p>
-    <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
+  <div id="trade-items-list">
+    <div id="trade-items-list-exit-btn" class= 'game-btn'>
+      <span class="material-icons">close</span>
+    </div>
+    <%= link_to new_trade_path do %>
+      <% current_user.items.each do |item| %>
+        <%=cl_image_tag item.photos.last.key, class:"trade-item-selection" if item.photos.attached? %>
+      <% end %>
+    <% end %>
   </div>
 </div>

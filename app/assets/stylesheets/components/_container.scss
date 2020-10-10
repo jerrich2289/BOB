@@ -80,7 +80,10 @@
   padding: 30px;
   justify-content: space-between;
   box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1);
+}
 
+#trade-page-body {
+  margin-right: 0px;
 }
 
 .simple_form.new_item {
@@ -92,4 +95,8 @@
 
 .wrapper {
   padding-bottom: 120px;
+}
+
+.hidden_form {
+  display: none;
 }
