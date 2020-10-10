@@ -6,10 +6,10 @@
     <%=image_tag(current_user.photo, :class => "avatar-55")%>
    <div class="flex-column">
     <div class="user-name">
-      <strong><%= message.user.name%></strong>
+      <%= @message.user.name %>
     </div>
     <div class="user-message">
-      <%=message.message %>
+      <%= @message.message %>
     </div>
     </div>
   </div>
