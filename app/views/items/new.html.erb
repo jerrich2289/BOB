@@ -10,7 +10,10 @@
     <div>
       <%= simple_form_for @item do |f| %>
       <div id="preview"></div>
-      <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "outline-btn upload-btn-wrapper" }, id: "browse", label: 'Upload more images' %>
+       <div class= "upload-btn-wrapper">
+      <label class="file required btn-upload" for="item_photos"><span class="material-icons">perm_media</span>Upload images <abbr title="required">*</abbr></label></div>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "img-upload-btn" }, id: "browse" %>
+      <!-- <span class="material-icons outline-btn ">perm_media</span> -->
       <%= f.input :name, label: 'Item name' %>
       <%= f.input :description, as: :text, label: 'Description (optional)' %>
       <%#= f.input :size, collection: 1..6, as: :select, label: 'Your items size is equal to or larger than a ...' %>
@@ -44,11 +47,13 @@
         <%=image_tag("fork.jpg", :class => "avatar-100-image")%>
       </button>
     </div>
-
     <%#= link_to "Delete", @item, :confirm => "Are you sure?", :method => :delete %>
    <% end %>
 
     </div>
   </div>
 </div>
+
+
+
 
