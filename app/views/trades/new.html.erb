@@ -16,20 +16,23 @@
         <%= f.submit "select" %>
       <% end %>
       <div class="trade-middle-container">
-        <div class= 'game-btn'>
-          <%= link_to items_path do %>
-            <span class="material-icons">
-              home
-            </span>
-          <% end %>
+        <div class="trade-middle-left">
+          <div class= 'game-btn'>
+            <%= link_to items_path do %>
+              <span class="material-icons">home</span>
+            <% end %>
+          </div>
+          <div class= 'game-btn'>
+            <%= link_to items_path do %>
+              <span class="material-icons">apps</span>
+            <% end %>
+          </div>
         </div>
         <div id="drag-middle">
           <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
         </div>
         <div class= 'game-btn' onclick="window.location.href = '/trades/new'">
-          <span>
-            skip
-          </span>
+          <span>skip</span>
         </div>
       </div>
     </div>
@@ -43,5 +46,9 @@
       <%= f.hidden_field :item_1_id %>
       <%= f.hidden_field :item_2_id %>
     <% end %>
+  </div>
+  <div class="trade-items-list">
+    <p> hi outside page </p>
+    <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
   </div>
 </div>

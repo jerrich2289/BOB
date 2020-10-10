@@ -36,8 +36,28 @@
   width: 100%;
 }
 
+.swap-item-button {
+  /* Vector */
+  position: absolute;
+  left: 9.33%;
+  right: 82.4%;
+  top: 52.71%;
+  bottom: 43.47%;
+  background: #333333;
+
+}
+
+.trade-middle-left {
+// forsøk å fjerne margin/padding her
+}
+
 .trade-items-list {
-  // denne er ment for ting-siden som kommer frem som en transform-meny
+  width: 100%;
+  height: 100vh;
+  background: green;
+  position: fixed;
+  transform: translateX(-50%);
+  transition: transform 1s ease;
 }
 
 #drag-middle {
