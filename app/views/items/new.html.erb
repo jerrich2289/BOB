@@ -9,7 +9,6 @@
 
     <div>
       <%= simple_form_for @item do |f| %>
-      <div id="preview"></div>
        <div class= "upload-btn-wrapper">
       <label class="file required btn-upload" for="item_photos"><span class="material-icons">perm_media</span>Upload images <abbr title="required">*</abbr></label></div>
       <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "img-upload-btn" }, id: "browse" %>
