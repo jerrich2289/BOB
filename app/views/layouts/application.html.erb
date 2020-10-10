@@ -24,6 +24,7 @@
           <%= link_to trades_path, class: "nav__link" do %>
             <i class="material-icons nav__icon">chat_bubble_outline</i>
             <span class="nav__text">Chat</span>
+            <%= current_user.unread_messages.count %>
           <% end %>
           <%= link_to new_trade_path, class: "nav__link" do %>
             <i class="material-icons nav__icon" >attach_file</i>

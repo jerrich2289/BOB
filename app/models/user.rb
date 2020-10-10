@@ -10,4 +10,8 @@ class User < ApplicationRecord
     item_ids = items.pluck(:id)
     Trade.where(item_1_id:item_ids).or(Trade.where(item_2_id:item_ids))
   end
+
+  def unread_messages
+    Message.unread.where(trade_id: trades.pluck(:id)).where.not(user: self)
+  end
 end
