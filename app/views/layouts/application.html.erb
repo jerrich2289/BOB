@@ -25,19 +25,22 @@
           <!-- <a href="#" class="nav__link"onclick="window.location.href = '/trades'"> -->
           <%= link_to trades_path, class: "nav__link" do %>
             <i class="material-icons nav__icon">chat_bubble_outline</i></span class="nav__text">Chat</span>
-      <% end %>
-    </a>
+          <% end %>
+        </a>
     <!--  <a href="#" class="nav__link" onclick="window.location.href = '/trades/new'"> -->
-    <%= link_to new_trade_path, class: "nav__link" do %>
-      <i class="material-icons nav__icon" >attach_file</i></span class="nav__text">Play</span>
-<% end %>
-</a>
+          <%= link_to new_trade_path, class: "nav__link" do %>
+            <i class="material-icons nav__icon" >attach_file</i></span class="nav__text">Play</span>
+          <% end %>
+        </a>
 <!-- <a href="#" class="nav__link nav__link--active" onclick="window.location.href = '/items'"> -->
-<%= link_to items_path, class: "nav__link" do %>
-  <i class="material-icons nav__icon">home</i></span class="nav__text">Home</span>
-<% end %>
-</a>
-</nav>
+          <%= link_to items_path, class: "nav__link" do %>
+            <i class="material-icons nav__icon">home</i></span class="nav__text">Home</span>
+          <% end %>
+        </a>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav__link" %>
+        </a>
+        </nav>
 <% end %>
 </footer>
 </html>
+
