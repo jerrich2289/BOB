@@ -10,7 +10,9 @@
     <div>
       <%= simple_form_for @item do |f| %>
       <div id="preview"></div>
-      <div class= "upload-btn-wrapper"><button class="btn-upload"><span class="material-icons">perm_media</span><%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "img-upload-btn upload-btn-wrapper" }, id: "browse", label: 'Upload images' %></button></div>
+       <div class= "upload-btn-wrapper">
+      <label class="file required btn-upload" for="item_photos"><span class="material-icons">perm_media</span>Upload images <abbr title="required">*</abbr></label></div>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "img-upload-btn" }, id: "browse" %>
       <!-- <span class="material-icons outline-btn ">perm_media</span> -->
       <%= f.input :name, label: 'Item name' %>
       <%= f.input :description, as: :text, label: 'Description (optional)' %>
