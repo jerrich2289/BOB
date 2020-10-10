@@ -77,3 +77,12 @@ function previewFiles() {
     [].forEach.call(files, readAndPreview);
   }
 }
+
+const materialIcon = () => {
+  var imageIcon = document.querySelector("file required");
+  if (imageIcon) {
+    imageIcon.innerHTML = `<span class="material-icons">perm_media</span>`;
+    console.log(imageIcon);
+  };
+}
+materialIcon();
