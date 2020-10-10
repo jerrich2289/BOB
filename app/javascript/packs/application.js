@@ -30,21 +30,6 @@ import "bootstrap";
 //= require_tree .
 import dragula from "dragula";
 
-// This if-statement checks if we're on the trade page or not
-if (document.URL.includes("trades/new")) {
-  // Code for opening the item selection menu
-  const itemMenuButton = document.getElementById("list-items-button");
-  itemMenuButton.addEventListener('click', (event) => {
-    document.getElementById("trade-items-list").classList.add("trade-items-list-open");
-  });
-
-  // Code for closing the item selection menu
-  const itemMenuExitButton = document.getElementById("trade-items-list-exit-btn");
-  itemMenuExitButton.addEventListener('click', (event) => {
-    document.getElementById("trade-items-list").classList.remove("trade-items-list-open");
-  });
-}
-
 // This is the code for swiping the trade image up/down
 document.addEventListener('turbolinks:load', () => {
   const fileinput = document.querySelector('input[type=file]')
@@ -55,7 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   const container = [document.querySelector('#drag-bigger'), document.querySelector('#drag-better'), document.querySelector('#drag-middle')];
   const drake = dragula(container, {
     moves: function (el, source, handle, sibling) {
-      return source.id === "drag-middle"; // elements are always draggable by default
+      return source.id === "drag-middle";
     },
     direction: 'vertical'
     // removeOnSpill: false,
@@ -68,6 +53,23 @@ document.addEventListener('turbolinks:load', () => {
       formBetter.submit()
     }
   });
+
+
+  // This if-statement checks if we're on the trade page or not
+  if (document.URL.includes("trades/new")) {
+    // Code for opening the item selection menu
+    const itemMenuButton = document.getElementById("list-items-button");
+    itemMenuButton.addEventListener('click', (event) => {
+      document.getElementById("trade-items-list").classList.add("trade-items-list-open");
+    });
+
+    // Code for closing the item selection menu
+    const itemMenuExitButton = document.getElementById("trade-items-list-exit-btn");
+    itemMenuExitButton.addEventListener('click', (event) => {
+      document.getElementById("trade-items-list").classList.remove("trade-items-list-open");
+    });
+  }
+
 });
 
 function previewFiles() {

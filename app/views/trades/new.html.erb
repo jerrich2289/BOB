@@ -11,8 +11,8 @@
       <%= f.hidden_field :item_2_id %>
     <% end %>
     <div>
-      <div id="selectForm" class="hidden_form">
-        <%= form_with(url: new_trade_path, method: "get", local: true) do |f| %>
+      <div class="hidden-form">
+        <%= form_with(url: new_trade_path, method: "get", id: "selectForm", local: true) do |f| %>
           <%= select_tag(:item_id, options_for_select(@all_items.pluck(:name, :id))) %>
           <%= f.submit "select" %>
         <% end %>
