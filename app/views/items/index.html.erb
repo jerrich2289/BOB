@@ -4,7 +4,7 @@
 <div class='index-container'>
   <div class='row justify-content-center d-flex'>
     <div class='col-10' align='center'>
-      <%=image_tag(current_user.photo, :class => "avatar-120")%>
+      <%=image_tag(current_user.photo, :class => "avatar-120") if current_user.photo.attached? %>
       <h5><b>Hello <%=current_user.name%>!</b></h5>
       <!-- <div class="button sm-btn">
         <%#= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "logout-btn btn button sm-btn" %>
