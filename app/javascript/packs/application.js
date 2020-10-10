@@ -54,6 +54,13 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 
+  // GJENSTÅR: 
+  // - sende inn skjemaet med rett verdi somehow 
+  // ( test = document.getElementById("selectForm"); )
+  // - Hente ID på klikket menybilde, og sende dette inn med 
+  // det skjulte skjemaet
+  // Done. 
+
 
   // This if-statement checks if we're on the trade page or not
   if (document.URL.includes("trades/new")) {
