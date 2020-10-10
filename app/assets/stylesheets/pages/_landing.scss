@@ -10,7 +10,6 @@
 
 .land-pad {
   padding-top: 134px;
-
 }
 
 .get-started {
@@ -49,6 +48,7 @@
 
 .land-logo {
   margin-bottom: 80px
+
 }
 
 .land-text{
@@ -60,4 +60,8 @@
   text-align: center;
 }
 
-
+.land-imgs {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
