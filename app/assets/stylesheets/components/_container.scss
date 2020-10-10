@@ -5,6 +5,8 @@
   box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.0796252);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+  min-height: calc(100vh - 75px);
+  overflow-y: scroll;
 }
 
 .container-btm {
@@ -39,3 +41,23 @@
 .arrow .container {
   margin-top: 150px;
 }
+
+.stick {
+  bottom: 75px;
+}
+
+.simple_form {
+  bottom: 75px;
+}
+
+#new-message {
+  position: fixed;
+  bottom: 75px;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
