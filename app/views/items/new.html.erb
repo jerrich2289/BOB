@@ -9,12 +9,15 @@
 
     <div>
       <%= simple_form_for @item do |f| %>
-       <div class= "upload-btn-wrapper">
-      <label class="file required btn-upload" for="item_photos"><span class="material-icons">perm_media</span>Upload images <abbr title="required">*</abbr></label></div>
+       <div class= "btn-wrapper upload-btn-wrapper">
+      <label class="file required btn-upload" for="item_photos"><span class="material-icons icon-space">perm_media</span>Upload images <abbr title="required">*</abbr></label></div>
       <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "img-upload-btn" }, id: "browse" %>
       <!-- <span class="material-icons outline-btn ">perm_media</span> -->
+      </div>
+      <div class="text-container">
       <%= f.input :name, label: 'Item name' %>
       <%= f.input :description, as: :text, label: 'Description (optional)' %>
+      </div>
       <%#= f.input :size, collection: 1..6, as: :select, label: 'Your items size is equal to or larger than a ...' %>
     <div class='container-sizechart'>
       <h2 class='text-center' id='body-font'> Would you say your item is equal to or smaller than:</h2>
