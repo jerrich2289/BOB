@@ -13,8 +13,10 @@
     <div>
       <div class="hidden-form">
         <%= form_with(url: new_trade_path, method: "get", id: "selectForm", local: true) do |f| %>
-          <%= select_tag(:item_id, options_for_select(@all_items.pluck(:name, :id))) %>
-          <%= f.submit "select" %>
+          <input type="hidden" name="item_id">
+          <%#= hidden_field(:item_id, :id) %>
+          <%#= select_tag(:item_id, options_for_select(@all_items.pluck(:name, :id))) %>
+          <%#= f.submit "select" %>
         <% end %>
       </div>
       <div class="trade-middle-container">
@@ -51,10 +53,10 @@
     <div id="trade-items-list-exit-btn" class= 'game-btn'>
       <span class="material-icons">close</span>
     </div>
-    <%= link_to new_trade_path do %>
-      <% current_user.items.each do |item| %>
+    <% current_user.items.each do |item| %>
+      <a href="#" data-item-id="<%= item.id %>" class="popup-menu-item">
         <%=cl_image_tag item.photos.last.key, class:"trade-item-selection" if item.photos.attached? %>
-      <% end %>
+      </a>
     <% end %>
   </div>
 </div>

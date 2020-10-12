@@ -29,6 +29,7 @@ import "bootstrap";
 //= require turbolinks
 //= require_tree .
 import dragula from "dragula";
+import { initSelectableItems } from "../plugins/item-selectors";
 
 // This is the code for swiping the trade image up/down
 document.addEventListener('turbolinks:load', () => {
@@ -76,6 +77,8 @@ document.addEventListener('turbolinks:load', () => {
       document.getElementById("trade-items-list").classList.remove("trade-items-list-open");
     });
   }
+
+  initSelectableItems();
 
 });
 
