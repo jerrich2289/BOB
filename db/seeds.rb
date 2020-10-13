@@ -72,5 +72,4 @@ Message.create!(message: 'Ill see you at midnight', trade: trade1, user: user2)
 Message.create!(message: 'I dont think I want to give up my item. Sorry', trade:trade2, user: user3)
 Message.create!(message: 'Hey, Lets set up a time to make the trade', trade:trade2, user: user4)
 
-
 puts "Done!"

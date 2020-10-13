@@ -24,7 +24,7 @@ sync_alt
     <div class="message-container" id="message-<%= message.id %>">
       <i class="author">
         <div class="d-flex single-message">
-        <%=image_tag(current_user.photo, :class => "avatar-55")%>
+        <%=image_tag(message.user.photo, :class => "avatar-55")%>
         <div class="flex-column">
         <div class="user-name">
         <span><%= message.user.name %></span>
