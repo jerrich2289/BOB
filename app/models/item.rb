@@ -14,4 +14,3 @@ private
     errors[:base] << "you can only upload 3 images" if self.photos.length > 3
   end
 end
-
