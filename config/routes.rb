@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'items/dummy'
-  resources :items, only: [:new, :create, :index, :show]
+  resources :items, only: [:new, :create, :index, :show, :destroy]
   devise_for :users
   root to: 'pages#landing'
 
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get '/items' => "items#index", :as => :user_root
+
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
