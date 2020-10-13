@@ -44,13 +44,14 @@
   height: 14px;
   font-size: 9px;
   text-align: center;
-  background: linear-gradient(225deg, #00FBFF 0%, #2BA9D9 100%);
+  background-color: #12c9e5;
   border-radius: 8px;
   text-position: center;
   position: absolute;
-  top: 10px;
+  top: -5px;
+  right: -5px;
 }
 
-.chat_wrapper {
+.chat-wrapper {
   position: relative;
 }
