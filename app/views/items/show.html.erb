@@ -1,21 +1,24 @@
 
 <div class="container">
-  <h1> <%= @item.name %></h1>
-  <%= render "shared/carousel" %>
+   <div class='row justify-content-center d-flex'>
+    <div class='col-10' align='center'>
+      <%= render "shared/carousel" %>
+      <h1> <%= @item.name %></h1>
+      <p> Description: <%= @item.description %> </p>
+      <p> Owned by a gentleperson with the name:  <strong> <%= @user.name %> </strong> </p>
+      <p> Location:  <strong> <%= @user.address %> </strong> </p>
+      <p> Added on: <%= @item.created_at %></p>
 
-  <p> Description: <%= @item.description %> </p>
-  <p> Owned by a gentleperson with the name:  <strong> <%= @user.name %> </strong> </p>
-  <p> Location:  <strong> <%= @user.address %> </strong> </p>
-  <p> Added on: <%= @item.created_at %> </p>
+      <a class="material-icons" href="javascript:history.back()">keyboard_backspace</a>
 
-  <div>
-  <%= link_to "Back to item index page", items_path %>
+       <div class="white-btn">
+        <%= link_to "Delete", @item, :confirm => "Are you sure?", :method => :ddestroy%>
+        </div>
+      </div>
+    </div>
   </div>
-  <div></div>
-  <a class="material-icons" href="javascript:history.back()">keyboard_backspace</a>
-  </div>
-  <%#= link_to "Delete", @item, :confirm => "Are you sure?", :method => :delete %>
 </div>
+
 <%# User avatars don't exist yet %>
 <%# @user.photo.attached? %>
 <%#= raise %>
