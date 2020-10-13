@@ -38,3 +38,19 @@
 .nav__icon {
   font-size: 18px;
 }
+
+.unread {
+  width: 14px;
+  height: 14px;
+  font-size: 9px;
+  text-align: center;
+  background: linear-gradient(225deg, #00FBFF 0%, #2BA9D9 100%);
+  border-radius: 8px;
+  text-position: center;
+  position: absolute;
+  top: 10px;
+}
+
+.chat_wrapper {
+  position: relative;
+}
