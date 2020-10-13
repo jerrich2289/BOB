@@ -1,7 +1,23 @@
 
-
-<h1>Welcome to your personal chat with User ...</h1>
-      <h1>Chat <%=@trade.id%> </h1>
+<div class ="row justify-content-center d-flex chat-trades">
+<%=image_tag(@trade.item_1.photos.first, :class => "trade-65")%>
+<div><span class="material-icons" style="font-size: 50px;">
+sync_alt
+</span></div>
+<%=image_tag(@trade.item_2.photos.first, :class => "trade-65")%>
+</div>
+<div class ="">
+  <div class='row justify-content-center d-flex'>
+    <div class="trade-complete">
+      <%= link_to trades_path do %>
+          MARK TRADE COMPLETED
+        <% end %>
+      </div>
+    </div>
+    <div class='row justify-content-center d-flex'>
+    <strong><P>TRADE PENDING</P></strong>
+  </div>
+  </div>
 <div class="chat-container">
 <div id="messages" data-trade-id="<%= @trade.id %>">
   <% @trade.messages.each do |message| %>

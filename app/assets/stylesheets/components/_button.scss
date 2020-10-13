@@ -102,6 +102,10 @@
   object-size: fill;
 }
 
+.btn-wrapper{
+  margin-top: 30px;
+}
+
 .upload-btn-wrapper input[type=file] {
   position: absolute;
   left: 0;
@@ -115,8 +119,33 @@
   width: 100%;
 }
 
+<<<<<<< HEAD
 #trade-items-list-exit-btn {
   position: absolute;
   right: 15px;
   top: 15px;
 }
+=======
+.icon-space {
+  margin-right: 10px;
+}
+
+.white-btn {
+  // position: absolute;
+  // left: 34.93%;
+  // right: 36.27%;
+  // top: 67%;
+  // bottom: 30.79%;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  // line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: #29AEDB;
+  background-color: white;
+
+}
+>>>>>>> master
