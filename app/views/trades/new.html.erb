@@ -1,60 +1,62 @@
-<div class='container-div'>
-  <div class="container-btm"></div>
-</div>
-<div class='land-pad'>
-  <div class='row justify-content-center d-flex'>
-    <div class='col-10' align='center'>
-      <%= link_to item_path(@bigger_item.id) do %>
-        <div id="drag-bigger" class="game-card">
-          <%#= cl_image_tag @bigger_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
-          <% @item = @bigger_item %>
-          <%= render "shared/carousel" %>
-        </div>
-      <% end %>
-      <%= form_with(model: @bigger_trade, id: "formBigger") do |f| %>
-        <%= f.hidden_field :item_1_id %>
-        <%= f.hidden_field :item_2_id %>
-        <%#= f.submit "trade" %>
-      <% end %>
-      <br>
-      <div>
-        <%= form_with(url: new_trade_path, method: "get", local: true) do |f| %>
-          <%= select_tag(:item_id, options_for_select(@all_items.pluck(:name, :id))) %>
-          <%= f.submit "select" %>
+<div id="trade-page-body" class='row justify-content-center d-flex'>
+  <div class='col-10' align='center'>
+    <%= link_to item_path(@bigger_item.id) do %>
+      <div id="drag-bigger" class="game-card">
+        <% @item = @bigger_item %>
+        <%= render "shared/carousel" %>
+      </div>
+    <% end %>
+    <%= form_with(model: @bigger_trade, id: "formBigger") do |f| %>
+      <%= f.hidden_field :item_1_id %>
+      <%= f.hidden_field :item_2_id %>
+    <% end %>
+    <div>
+      <div class="hidden-form">
+        <%= form_with(url: new_trade_path, method: "get", id: "selectForm", local: true) do |f| %>
+          <input type="hidden" name="item_id">
+          <%#= hidden_field(:item_id, :id) %>
+          <%#= select_tag(:item_id, options_for_select(@all_items.pluck(:name, :id))) %>
+          <%#= f.submit "select" %>
         <% end %>
-        <br>
+      </div>
+      <div class="trade-middle-container">
+        <div class="trade-middle-left">
+          <div class= 'game-btn'>
+            <%= link_to items_path do %>
+              <span class="material-icons">home</span>
+            <% end %>
+          </div>
+          <div id="list-items-button" class= 'game-btn'>
+            <span class="material-icons">apps</span>
+          </div>
+        </div>
         <div id="drag-middle">
           <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
         </div>
-      </div>
-      <br>
-      <div class= 'game-btn'>
-        <%= link_to items_path do %>
-          <span class="material-icons">
-            home
-          </span>
-        <% end %>
-      </div>
-      <div class= 'game-btn' onclick="window.location.href = '/trades/new'">
-        <span>
-          skip
-        </span>
-      </div>
-      <br>
-      <br>
-      <%= link_to item_path(@better_item.id) do %>
-        <div id="drag-better" class="game-card">
-          <%#= cl_image_tag @better_item.photos.first.key, class: 'card-img', alt: 'Bigger Item' %>
-          <% @item = @better_item %>
-          <%= render "shared/carousel" %>
+        <div class= 'game-btn' onclick="window.location.href = '/trades/new'">
+          <span>skip</span>
         </div>
-      <% end %>
-      <%= form_with(model: @better_trade, id: "formBetter") do |f| %>
-        <%= f.hidden_field :item_1_id %>
-        <%= f.hidden_field :item_2_id %>
-        <%#= f.submit "trade" %>
-      <% end %>
-      <br>
+      </div>
     </div>
+    <%= link_to item_path(@better_item.id) do %>
+      <div id="drag-better" class="game-card">
+        <% @item = @better_item %>
+        <%= render "shared/carousel" %>
+      </div>
+    <% end %>
+    <%= form_with(model: @better_trade, id: "formBetter") do |f| %>
+      <%= f.hidden_field :item_1_id %>
+      <%= f.hidden_field :item_2_id %>
+    <% end %>
+  </div>
+  <div id="trade-items-list">
+    <div id="trade-items-list-exit-btn" class= 'game-btn'>
+      <span class="material-icons">close</span>
+    </div>
+    <% current_user.items.each do |item| %>
+      <a href="#" data-item-id="<%= item.id %>" class="popup-menu-item">
+        <%=cl_image_tag item.photos.last.key, class:"trade-item-selection" if item.photos.attached? %>
+      </a>
+    <% end %>
   </div>
 </div>
