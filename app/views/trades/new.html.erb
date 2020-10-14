@@ -1,3 +1,9 @@
+<div class="trade-container-top">
+  <%# This is the white background at the top %>
+</div>
+<div class="trade-container-bottom">
+  <%# this is the white background at the bottom %>
+</div>
 <div id="trade-page-body" class='row justify-content-center d-flex'>
   <div class='col-10' align='center'>
     <%= link_to item_path(@bigger_item.id) do %>
@@ -19,6 +25,12 @@
           <%#= f.submit "select" %>
         <% end %>
       </div>
+      <div class="arrow-up">
+        <%# Creates a CSS-based arrow %>
+      </div>
+      <div class="arrow-down">
+        <%# Creates a CSS-based arrow %>
+      </div>
       <div class="trade-middle-container">
         <div class="trade-middle-left">
           <div class= 'game-btn'>
@@ -31,10 +43,10 @@
           </div>
         </div>
         <div id="drag-middle">
-          <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
+          <%= cl_image_tag @user_item.photos.first.key, class: "trade-picture-middle", alt: 'User Item'%>
         </div>
         <div class= 'game-btn' onclick="window.location.href = '/trades/new'">
-          <span>skip</span>
+          <span>SKIP</span>
         </div>
       </div>
     </div>
