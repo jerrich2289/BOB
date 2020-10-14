@@ -19,6 +19,18 @@
   overflow-y: scroll;
 }
 
+.all-chats-container {
+  padding-left: 20px;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.0796252);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  min-height: calc(100vh - 75px);
+  overflow-y: scroll;
+  padding-top: 25px;
+}
+
 .new-item-container {
   margin-top: 140px;
   width: 100%;
