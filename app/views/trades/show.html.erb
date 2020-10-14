@@ -42,7 +42,9 @@ sync_alt
 <!-- <form action="/trades"></form> -->
 <%= simple_form_for [@trade, @message], remote: true, class:"stick d-flex" do |f|%>
   <%= f.input :message, label: false, placeholder: "Message" %>
-  <%= f.button :submit, 'Send', class:"outline-btn" %>
+   <div class="input-group-append">
+  <%= f.button :submit,'>', class:"outline-btn" %>
+   </div>
 <% end %>
 </div>
 </div>
