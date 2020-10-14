@@ -23,6 +23,8 @@ body {
   margin-top: 0px;
   padding-top: 0px;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
+  -webkit-overflow-scrolling: touch;
   font-family: 'Inter', sans-serif;
   background: linear-gradient(225deg, #00FBFF 0%, #2BA9D9 100%);
 }

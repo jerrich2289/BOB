@@ -28,11 +28,19 @@ import "bootstrap";
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+import inobounce from "inobounce";
 import dragula from "dragula";
 import { initSelectableItems } from "../plugins/item-selectors";
 
 // This is the code for swiping the trade image up/down
 document.addEventListener('turbolinks:load', () => {
+  const inobounceEnable = document.querySelector('.inobounce-enable')
+  if (inobounceEnable) {
+    inobounce.enable()
+
+  } else {
+    inobounce.disable()
+  }
   const fileinput = document.querySelector('input[type=file]')
   if (fileinput) {
     fileinput.addEventListener("change", previewFiles)
@@ -55,12 +63,12 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 
-  // GJENSTÅR: 
-  // - sende inn skjemaet med rett verdi somehow 
+  // GJENSTÅR:
+  // - sende inn skjemaet med rett verdi somehow
   // ( test = document.getElementById("selectForm"); )
-  // - Hente ID på klikket menybilde, og sende dette inn med 
+  // - Hente ID på klikket menybilde, og sende dette inn med
   // det skjulte skjemaet
-  // Done. 
+  // Done.
 
 
   // This if-statement checks if we're on the trade page or not
