@@ -2,15 +2,20 @@
     <div class="title-white">
       Chats
 </div>
+   <% if message.present? %>
   <div class="d-flex message-preview">
     <%=image_tag(current_user.photo, :class => "avatar-55")%>
    <div class="flex-column">
     <div class="user-name">
-      <%= @message.user.name %>
+      <%= message.user.name %>
     </div>
     <div class="user-message">
-      <%= @message.message %>
+      <%= message.message %>
     </div>
     </div>
   </div>
+  <% else %>
+  No messages yet! Click here to start chatting.
+  <% end %>
 </div>
+
