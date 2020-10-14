@@ -19,6 +19,12 @@
           <%#= f.submit "select" %>
         <% end %>
       </div>
+      <div class="arrow-up">
+        <%# Creates a CSS-based arrow %>
+      </div>
+      <div class="arrow-down">
+        <%# Creates a CSS-based arrow %>
+      </div>
       <div class="trade-middle-container">
         <div class="trade-middle-left">
           <div class= 'game-btn'>
@@ -31,10 +37,10 @@
           </div>
         </div>
         <div id="drag-middle">
-          <%= cl_image_tag @user_item.photos.first.key, class: 'Put class name', alt: 'User Item', class: "avatar-150-image"%>
+          <%= cl_image_tag @user_item.photos.first.key, class: "trade-picture-middle", alt: 'User Item'%>
         </div>
         <div class= 'game-btn' onclick="window.location.href = '/trades/new'">
-          <span>skip</span>
+          <span>SKIP</span>
         </div>
       </div>
     </div>

@@ -38,15 +38,25 @@
 
 .trade-middle-left {
   width: 44px;
+  // display: flex;
+  // flex-direction: column;
+}
+
+.trade-middle-left {
+  .game-btn {
+    margin: 10px 0px;
+  }
 }
 
 #trade-items-list {
-  width: 100%;
-  height: 100vh;
   background: #29AEDB;
   position: fixed;
   transform: translateX(-100%);
   transition: transform 1s ease;
+  right: 0px;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
 #trade-items-list.trade-items-list-open {
@@ -54,5 +64,5 @@
 }
 
 #drag-middle {
-  margin: 10px 10px;
+  margin: 30px 19px;
 }
