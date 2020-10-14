@@ -18,26 +18,30 @@
 
 .arrow-up {
   position: absolute;
-  width: 0;
-  height: 0;
-  left: 100px;
-  top: 200px;
-  // transform: rotate(-180deg);
+  left: 0;
+  top: 212px;
   border-left: 46px solid transparent;
   border-right: 46px solid transparent;
-  border-bottom: 48px solid rgba(255, 255, 255, 0.38);  
+  border-bottom: 48px solid rgba(255, 255, 255, 0.38);
+  width: 0px;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .arrow-down {
   position: absolute;
-  width: 0;
-  height: 0;
-  left: 100px;
-  top: 360px;
-  transform: rotate(-180deg);
+  left: 0;
+  top: 214px;
   border-left: 46px solid transparent;
   border-right: 46px solid transparent;
-  border-bottom: 48px solid rgba(255, 255, 255, 0.38);  
+  border-bottom: 48px solid rgba(255, 255, 255, 0.38);
+  width: 0px;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto; 
+  top: 356px;
+  transform: rotate(-180deg);
 }
 
 .trade-picture-middle {
