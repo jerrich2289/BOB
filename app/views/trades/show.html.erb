@@ -38,12 +38,20 @@ sync_alt
   <% end %>
 </div>
 
-
+<div d-flex>
 <!-- <form action="/trades"></form> -->
-<%= simple_form_for [@trade, @message], remote: true, class:"stick" do |f|%>
+<%= simple_form_for [@trade, @message], remote: true, class:"stick d-flex" do |f|%>
   <%= f.input :message, label: false, placeholder: "Message" %>
-  <%= f.button :submit, :label => "Send", class:"outline-btn width" %>
+   <div class="input-group-append">
+  <%= f.button :submit,'>', class:"outline-btn" %>
+   </div>
 <% end %>
 </div>
+</div>
+
+
+send
+</span>
+
 
 
