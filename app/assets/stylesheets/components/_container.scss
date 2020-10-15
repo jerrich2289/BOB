@@ -1,3 +1,24 @@
+.trade-container-top {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: -1%;
+  bottom: 80.05%;
+  border-radius: 0px 0px 25px 25px;
+  background-color: white;
+}
+
+.trade-container-bottom {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 80.05%;
+  bottom: -1%;
+  border-radius: 0px 0px 25px 25px;
+  background-color: white;
+  transform: rotate(180deg)
+}
+
 .index-container {
   margin-top: 130px;
   width: 100%;
@@ -17,6 +38,18 @@
   border-top-right-radius: 25px;
   min-height: calc(100vh - 75px);
   overflow-y: scroll;
+}
+
+.all-chats-container {
+  padding-left: 20px;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.0796252);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  min-height: calc(100vh - 75px);
+  overflow-y: scroll;
+  padding-top: 25px;
 }
 
 .new-item-container {
@@ -40,7 +73,6 @@ padding: 40px;
 
 .container-div {
   position: relative;
-
 }
 
 .container-sizechart {
@@ -89,7 +121,10 @@ padding: 40px;
   padding: 30px;
   justify-content: space-between;
   box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1);
+}
 
+#trade-page-body {
+  margin-right: 0px;
 }
 
 .simple_form.new_item {
@@ -101,6 +136,10 @@ padding: 40px;
 
 .wrapper {
   padding-bottom: 10px;
+}
+
+.hidden-form {
+  // display: none;
 }
 
 .show-container {

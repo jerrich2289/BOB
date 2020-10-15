@@ -28,23 +28,31 @@ import "bootstrap";
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+import inobounce from "inobounce";
 import dragula from "dragula";
+import { initSelectableItems } from "../plugins/item-selectors";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-
+// This is the code for swiping the trade image up/down
 document.addEventListener('turbolinks:load', () => {
+  const inobounceEnable = document.querySelector('.inobounce-enable')
+  if (inobounceEnable) {
+    inobounce.enable()
+
+  } else {
+    inobounce.disable()
+  }
   const fileinput = document.querySelector('input[type=file]')
   if (fileinput) {
     fileinput.addEventListener("change", previewFiles)
   }
-  // Call your functions here, e.g:
-  // initSelect2();
+
   const container = [document.querySelector('#drag-bigger'), document.querySelector('#drag-better'), document.querySelector('#drag-middle')];
   const drake = dragula(container, {
     moves: function (el, source, handle, sibling) {
-      return source.id === "drag-middle"; // elements are always draggable by default
-    }
+      return source.id === "drag-middle";
+    },
+    direction: 'vertical'
+    // removeOnSpill: false,
   });
 
   drake.on("drop", (el, target, sibling) => {
@@ -54,6 +62,32 @@ document.addEventListener('turbolinks:load', () => {
       formBetter.submit()
     }
   });
+
+  // GJENSTÅR:
+  // - sende inn skjemaet med rett verdi somehow
+  // ( test = document.getElementById("selectForm"); )
+  // - Hente ID på klikket menybilde, og sende dette inn med
+  // det skjulte skjemaet
+  // Done.
+
+
+  // This if-statement checks if we're on the trade page or not
+  if (document.URL.includes("trades/new")) {
+    // Code for opening the item selection menu
+    const itemMenuButton = document.getElementById("list-items-button");
+    itemMenuButton.addEventListener('click', (event) => {
+      document.getElementById("trade-items-list").classList.add("trade-items-list-open");
+    });
+
+    // Code for closing the item selection menu
+    const itemMenuExitButton = document.getElementById("trade-items-list-exit-btn");
+    itemMenuExitButton.addEventListener('click', (event) => {
+      document.getElementById("trade-items-list").classList.remove("trade-items-list-open");
+    });
+  }
+
+  initSelectableItems();
+
 });
 
 function previewFiles() {
