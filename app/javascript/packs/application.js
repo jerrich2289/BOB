@@ -51,25 +51,21 @@ document.addEventListener('turbolinks:load', () => {
     moves: function (el, source, handle, sibling) {
       return source.id === "drag-middle";
     },
-    direction: 'vertical'
+    direction: 'vertical',
+    copy: true
     // removeOnSpill: false,
   });
 
   drake.on("drop", (el, target, sibling) => {
+    if (target == null) {
+      return;
+    }
     if (target.id === "drag-bigger") {
       formBigger.submit()
     } else if (target.id === "drag-better") {
       formBetter.submit()
     }
   });
-
-  // GJENSTÅR:
-  // - sende inn skjemaet med rett verdi somehow
-  // ( test = document.getElementById("selectForm"); )
-  // - Hente ID på klikket menybilde, og sende dette inn med
-  // det skjulte skjemaet
-  // Done.
-
 
   // This if-statement checks if we're on the trade page or not
   if (document.URL.includes("trades/new")) {
@@ -87,6 +83,7 @@ document.addEventListener('turbolinks:load', () => {
   }
 
   initSelectableItems();
+
 
 });
 
