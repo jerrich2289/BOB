@@ -84,6 +84,34 @@ padding: 40px;
   background: #FFFFFF;
   padding-bottom: 100px;
 
+p {
+  text-align: center;
+}
+
+}
+
+.container-show-text {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 100%;
+  margin: 0 auto;
+  background: #FFFFFF;
+
+}
+
+.container-show-text-b {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 50px;
+  width: 100%;
+  margin: 0 auto;
+  background: #FFFFFF;
+
 }
 
 .container-sizechart-s {
@@ -98,6 +126,7 @@ padding: 40px;
 
 .arrow .container {
   margin-top: 150px;
+  padding-left: 40px;
 }
 
 .stick {
