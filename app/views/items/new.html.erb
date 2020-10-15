@@ -2,15 +2,15 @@
 <%# , wrapper_html: { class: 'class_name' } %>
 <div class="new-item-container">
   <div>
-    <div class='arrow'>
-        <div class="title-white">
-          <a class="material-icons" href="javascript:history.back()">keyboard_backspace</a>
-        </div>
-        <h1>Add item</h1>
+    <div class='arrow '>
+        <div class="title-white ">
+          <a class="material-icons arrow" href="javascript:history.back()">keyboard_backspace</a>
+          <h1>Add item</h1>
+        </div >
     </div>
-  </div>
 
-    <div>
+  </div>
+    <div class="white-wrapper">
       <%= simple_form_for @new_item do |f| %>
       <div id="preview"></div>
          <div class= "btn-wrapper upload-btn-wrapper">
@@ -27,9 +27,9 @@
           <div class='container-show-text'>
             <h2 class='text-center' id='body-font'> Would you say your item is equal to or smaller than:</h2>
           </div>
-          <div class='container-show-text-b'>
+         <!--  <div class='container-show-text-b'>
             <p>Clicking on one of the following icons will save your item into a size category and launch you into trade!</p>
-          </div>
+          </div> -->
         </div>
 
         <div class=wrapper>

@@ -1,23 +1,24 @@
 <div class="container">
-    <div class="title-white">
-      Chats
-</div>
-<div class="all-chats-container">
-   <% if message.present? %>
-  <div class="d-flex message-preview">
-    <%=image_tag(current_user.photo, :class => "avatar-55")%>
-   <div class="flex-column">
-    <div class="user-name">
-      <%= message.user.name %>
-    </div>
-    <div class="user-message">
-      <%= message.message %>
-    </div>
-    </div>
+  <div class="title-white">
+      <a class="material-icons arrow" href="javascript:history.back()">keyboard_backspace</a>
+      <h1> Chats </h1>
   </div>
-  <% else %>
-  You have a new trade request! Click here to start chatting.
-  <% end %>
-</div>
+  <div class="all-chats-container">
+     <% if message.present? %>
+    <div class="d-flex message-preview">
+      <%=image_tag(current_user.photo, :class => "avatar-55")%>
+     <div class="flex-column">
+      <div class="user-name">
+        <%= message.user.name %>
+      </div>
+      <div class="user-message">
+        <%= message.message %>
+      </div>
+      </div>
+    </div>
+    <% else %>
+    You have a new trade request! Click here to start chatting.
+    <% end %>
+  </div>
 </div>
 
