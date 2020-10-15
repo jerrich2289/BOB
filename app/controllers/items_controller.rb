@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = User.find(@item.owner_id)
   end
-  
+
   def destroy
     @item = Item.find(params[:id])
     @item.destroy!
