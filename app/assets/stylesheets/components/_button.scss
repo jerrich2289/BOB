@@ -76,6 +76,12 @@
   }
 }
 
+.game-card { 
+  .trade-picture-middle {
+    display: none;
+  }
+}
+
 .logout-btn {
   right: 30px;
   top: 30px;
