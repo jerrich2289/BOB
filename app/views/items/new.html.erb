@@ -10,74 +10,74 @@
     </div>
   </div>
 
-      <div>
-        <%= simple_form_for @new_item do |f| %>
-         <div id="preview"></div>
+    <div>
+      <%= simple_form_for @new_item do |f| %>
+      <div id="preview"></div>
          <div class= "btn-wrapper upload-btn-wrapper">
-        <label class="file required btn-upload" for="item_photos"><span class="material-icons icon-space">perm_media</span>Upload images <abbr title="required">*</abbr></label></div>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "img-upload-btn" }, id: "browse" %>
+          <label class="file required btn-upload" for="item_photos"><span class="material-icons icon-space">perm_media</span>Upload images <abbr title="required">*</abbr></label></div>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, wrapper_html: { class: "img-upload-btn" }, id: "browse" %>
         <!-- <span class="material-icons outline-btn ">perm_media</span> -->
         </div>
-        <div class="text-container">
-        <%= f.input :name, label: 'Item name' %>
-        <%= f.input :description, as: :text, label: 'Description (optional)' %>
-        </div>
+          <div class="text-container">
+            <%= f.input :name, label: 'Item name' %>
+            <%= f.input :description, as: :text, label: 'Description (optional)' %>
+          </div>
         <%#= f.input :size, collection: 1..6, as: :select, label: 'Your items size is equal to or larger than a ...' %>
-      <div>
-        <div class='container-show-text'>
-          <h2 class='text-center' id='body-font'> Would you say your item is equal to or smaller than:</h2>
+        <div>
+          <div class='container-show-text'>
+            <h2 class='text-center' id='body-font'> Would you say your item is equal to or smaller than:</h2>
+          </div>
+          <div class='container-show-text-b'>
+            <p>Clicking on one of the following icons will save your item into a size category and launch you into trade!</p>
+          </div>
         </div>
-        <div class='container-show-text-b'>
-          <p>Clicking on one of the following icons will save your item into a size category and launch you into trade!</p>
-        </div>
-      </div>
 
-      <div class=wrapper>
-      <div class='container-sizechart'>
-        <div>
-        <button name="item[size]" value="1">
-          <%=image_tag("fork.jpg", :class => "avatar-120")%>
-        </button>
-        <p>fork</p>
+        <div class=wrapper>
+          <div class='container-sizechart'>
+            <div>
+              <button name="item[size]" value="1">
+                <%=image_tag("fork.jpg", :class => "avatar-120")%>
+              </button>
+              <p>fork</p>
+            </div>
+          <div>
+            <button name="item[size]" value="2">
+              <%=image_tag("book.jpg", :class => "avatar-120")%>
+            </button>
+            <p>book</p>
+           </div>
         </div>
-        <div>
-        <button name="item[size]" value="2">
-          <%=image_tag("book.jpg", :class => "avatar-120")%>
-        </button>
-        <p>book</p>
-       </div>
-      </div>
 
-      <div class='container-sizechart'>
-        <div>
-          <button name="item[size]" value="3">
-            <%=image_tag("Coffee Table.jpg", :class => "avatar-120")%>
-          </button>
-          <p>coffee table</p>
+        <div class='container-sizechart'>
+          <div>
+            <button name="item[size]" value="3">
+              <%=image_tag("Coffee Table.jpg", :class => "avatar-120")%>
+            </button>
+            <p>coffee table</p>
+          </div>
+            <div>
+              <button name="item[size]" value="4">
+                <%=image_tag("Office_Chair.jpg", :class => "avatar-120")%>
+              </button>
+              <p>office chair</p>
+            </div>
         </div>
-        <div>
-        <button name="item[size]" value="4">
-          <%=image_tag("Office_Chair.jpg", :class => "avatar-120")%>
-        </button>
-        <p>office chair</p>
-        </div>
-      </div>
 
-      <div class='container-sizechart'>
-        <div>
-        <button name="item[size]" value="5">
-          <%=image_tag("fridge.jpg", :class => "avatar-120")%>
-        </button>
-        <p>refrigerator</p>
+        <div class='container-sizechart'>
+          <div>
+            <button name="item[size]" value="5">
+              <%=image_tag("fridge.jpg", :class => "avatar-120")%>
+            </button>
+            <p>refrigerator</p>
+          </div>
+            <div>
+              <button name="item[size]" value="6">
+                <%=image_tag("Car.jpg", :class => "avatar-120")%>
+              </button>
+              <p>car</p>
+            </div>
+          <% end %>
         </div>
-        <div>
-        <button name="item[size]" value="6">
-          <%=image_tag("Car.jpg", :class => "avatar-120")%>
-        </button>
-        <p>car</p>
-        </div>
-        <% end %>
-      </div>
     </div>
   </div>
 </div>
