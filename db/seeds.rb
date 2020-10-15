@@ -12,64 +12,60 @@ Item.destroy_all
 User.destroy_all
 
 puts "Adding users..."
-user1 = User.create!(name: "Steve", email: "steve@email.com", password: "password", address: "Ski, Norway")
-user1.photo.attach(io: File.open("app/assets/images/steve.jpg"),filename: "steve.jpg")
-user2 = User.create!(name: "Bill", email: "bill@email.com", password: 'password', address: "Bergen, Norway")
-user2.photo.attach(io: File.open("app/assets/images/bill.png"),filename: "bill.png")
-user3 = User.create!(name: "Karin", email: "karin@email.com",  password: "password", address: "Oslo, Norway")
-user3.photo.attach(io: File.open("app/assets/images/karin.png"),filename: "karin.png")
-user4 = User.create!(name: "Jazz", email: "jazz@email.com", password: "password", address: "Låkehavna, Norway")
-user4.photo.attach(io: File.open("app/assets/images/jazz.jpg"),filename: "jazz.jpg")
+user1 = User.create!(name: "Lise", email: "lise@email.com", password: "password", address: "Oslo, Norway")
+user1.photo.attach(io: File.open("app/assets/images/seed/lise.jpg"),filename: "lise.jpg")
+user2 = User.create!(name: "Ingrid", email: "ingrid@email.com", password: 'password', address: "Oslo, Norway")
+user2.photo.attach(io: File.open("app/assets/images/seed/ing.jpg"),filename: "ing.jpg")
+user3 = User.create!(name: "Martin", email: "martin@email.com",  password: "password", address: "Oslo, Norway")
+user3.photo.attach(io: File.open("app/assets/images/seed/martin.png"),filename: "martin.png")
+user4 = User.create!(name: "Jeremy", email: "jeremy@email.com", password: "password", address: "Oslo, Norway")
+user4.photo.attach(io: File.open("app/assets/images/seed/jeremy.jpg"),filename: "jeremy.jpg")
+user5 = User.create!(name: "Marshall", email: "Marshall@email.com", password: "password", address: "Oslo, Norway")
+user5.photo.attach(io: File.open("app/assets/images/seed/marshall.jpg"),filename: "marshall.jpg")
 
 puts "Adding items..."
-item1 = Item.new(name: "chair", description: "I am an average chair", size: "3", owner: user1,)
-item1.photos.attach(io: File.open("app/assets/images/preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg"),filename: "preloved_restaurant_used_chairs_for_sale_1546660931_0035e8a60.jpeg")
+item1 = Item.new(name: "Bowl", description: "Well taken care of glass bowl", size: "2", owner: user1,)
+item1.photos.attach(io: File.open("app/assets/images/seed/bowl-a.jpg"),filename: "bowl-a.jpg")
+item1.photos.attach(io: File.open("app/assets/images/seed/bowl-b.jpg"),filename: "bowl-b.jpg")
 item1.save!
 
-item2 = Item.new(name: 'broken window', description: 'Somewone ran into me', size: '4', owner: user2)
-item2.photos.attach(io: File.open("app/assets/images/broken-window-79750272-adobe.jpeg"),filename: "broken-window-79750272-adobe.jpeg")
+item2 = Item.new(name: 'Olympus Camera', description: 'Old 35mm Camera', size: '2', owner: user2)
+item2.photos.attach(io: File.open("app/assets/images/seed/camera-a.jpg"),filename: "camera-a.jpg")
+item2.photos.attach(io: File.open("app/assets/images/seed/camera-b.jpg"),filename: "camera-b.jpg")
 item2.save!
 
-item3 = Item.new(name: "hair brush", description: "I am over used but muched loved", size: "1", owner: user3)
-item3.photos.attach(io: File.open("app/assets/images/girl-hairbrush-used-isolated-white-background-36490657.jpg"),filename: "girl-hairbrush-used-isolated-white-background-36490657.jpg")
+item3 = Item.new(name: "Chair", description: "Great Chair", size: "3", owner: user3)
+item3.photos.attach(io: File.open("app/assets/images/seed/chair-a.jpg"),filename: "chair-a.jpg")
+item3.photos.attach(io: File.open("app/assets/images/seed/chair-b.jpg"),filename: "chair-b.jpg")
 item3.save!
 
-item4 = Item.new(name: 'lamp shade', description: 'I prefer to be worn as a hat', size: '2', owner: user4)
-item4.photos.attach(io: File.open("app/assets/images/Lampshade.jpg"),filename: "Lampshade.jpg")
+item4 = Item.new(name: "iPod", description: "Old iPod", size: "2", owner: user4)
+item4.photos.attach(io: File.open("app/assets/images/seed/ipod.jpg"),filename: "ipod.jpg")
+item4.photos.attach(io: File.open("app/assets/images/seed/ipod-b.jpg"),filename: "ipod-b.jpg")
 item4.save!
 
-item5 = Item.new(name: 'My Dirty sex ridden bed', description: 'Well loved, very well loved.', size: '5', owner: user1)
-item5.photos.attach(io: File.open("app/assets/images/bed-mattress.jpg"),filename: "bed-mattress.jpg")
+item5 = Item.new(name: "Lawn Mower", description: "Big Lawn Mower", size: "4", owner: user5)
+item5.photos.attach(io: File.open("app/assets/images/seed/lawn-a.jpg"),filename: "lawn.jpg")
+item5.photos.attach(io: File.open("app/assets/images/seed/lawn-b.jpg"),filename: "lawn-b.jpg")
 item5.save!
 
-item6 = Item.new(name: 'Floral chair', description: 'Sit on my face please!', size: '3', owner: user2)
-item6.photos.attach(io: File.open("app/assets/images/chair2.jpg"),filename: "chair2.jpg")
+item6 = Item.new(name: "Lamp", description: "Older Lamp", size: "3", owner: user5)
+item6.photos.attach(io: File.open("app/assets/images/seed/light-a.jpg"),filename: "light-a.jpg")
+item6.photos.attach(io: File.open("app/assets/images/seed/light-b.jpg"),filename: "light-b.jpg")
 item6.save!
 
-item7 = Item.new(name: 'an above average coffee table', description: 'let me hold your mug', size: '4', owner: user3)
-item7.photos.attach(io: File.open("app/assets/images/coffee-table.jpg"),filename: "coffee-table.jpg")
+item7 = Item.new(name: "Cooking Pan", description: "Cooking Pan", size: "2", owner: user3)
+item7.photos.attach(io: File.open("app/assets/images/seed/pan.jpg"),filename: "pan.jpg")
 item7.save!
-
-item8 = Item.new(name: 'old picture frames', description: '', size: '1', owner: user4)
-item8.photos.attach(io: File.open("app/assets/images/picture-frame.jpg"),filename: "picture-frame.jpg")
-item8.save!
-
-item7 = Item.new(name: 'Desk', description: 'for study', size: '5', owner: user3)
-item7.photos.attach(io: File.open("app/assets/images/desk.jpg"),filename: "desk.jpg")
-item7.save!
-
-item8 = Item.new(name: 'plant', description: '', size: '2', owner: user1)
-item8.photos.attach(io: File.open("app/assets/images/Plant.jpg"),filename: "Plant.jpg")
-item8.save!
 
 puts "Adding trades..."
 trade1 =Trade.create!(item_1: item1, item_2: item2)
 trade2 = Trade.create!(item_1: item3, item_2: item4)
 
 puts "Adding messages..."
-Message.create!(message: 'hey man, I am really keen to pick up my broken window', trade:trade1, user: user1)
-Message.create!(message: 'Ill see you at midnight', trade: trade1, user: user2)
-Message.create!(message: 'I dont think I want to give up my item. Sorry', trade:trade2, user: user3)
-Message.create!(message: 'Hey, Lets set up a time to make the trade', trade:trade2, user: user4)
+Message.create!(message: 'Hello... I would love to swap items!', trade:trade1, user: user1)
+Message.create!(message: 'Would you like to trade?', trade: trade1, user: user2)
+Message.create!(message: 'Lets Trade', trade:trade2, user: user3)
+Message.create!(message: 'Hey, lets set up a time to make the trade', trade:trade2, user: user4)
 
 puts "Done!"
