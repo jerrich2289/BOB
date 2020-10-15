@@ -2,14 +2,18 @@ class ItemsController < ApplicationController
   before_action :show_navbar, only: [:new, :show, :index]
 
   def new
-    @item = Item.new
+    @new_item = Item.new
   end
 
   def create
     @new_item = Item.new(strong_params)
     @new_item.owner = current_user
-    @new_item.save!
-    redirect_to new_trade_path(item_id: @new_item.id)
+    @new_item.save
+    if @new_item.save
+      redirect_to new_trade_path(item_id: @new_item.id)
+    else
+      render :new
+    end
   end
 
   def index
@@ -20,7 +24,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = User.find(@item.owner_id)
   end
-  
+
   def destroy
     @item = Item.find(params[:id])
     @item.destroy!
