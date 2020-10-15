@@ -6,16 +6,23 @@
 </div>
 <div id="trade-page-body" class='row justify-content-center d-flex inobounce-enable'>
   <div class='col-10' align='center'>
-    <%= link_to item_path(@bigger_item.id) do %>
-      <div id="drag-bigger" class="game-card">
-        <% @item = @bigger_item %>
-        <%= render "shared/carousel" %>
-      </div>
+    <% if @bigger_item.nil? %>
+     <div class="game-card">
+         no item avaialable
+        </div>
+    <% else %>
+      <%= link_to item_path(@bigger_item.id) do %>
+        <div id="drag-bigger" class="game-card">
+          <% @item = @bigger_item %>
+          <%= render "shared/carousel" %>
+        </div>
+      <% end %>
+      <%= form_with(model: @bigger_trade, id: "formBigger") do |f| %>
+        <%= f.hidden_field :item_1_id %>
+        <%= f.hidden_field :item_2_id %>
+      <% end %>
     <% end %>
-    <%= form_with(model: @bigger_trade, id: "formBigger") do |f| %>
-      <%= f.hidden_field :item_1_id %>
-      <%= f.hidden_field :item_2_id %>
-    <% end %>
+
     <div>
       <div class="hidden-form">
         <%= form_with(url: new_trade_path, method: "get", id: "selectForm", local: true) do |f| %>
