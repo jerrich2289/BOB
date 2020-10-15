@@ -1,11 +1,6 @@
-<div class="container">
-  <div class="title-white">
-      <a class="material-icons arrow" href="javascript:history.back()">keyboard_backspace</a>
-      <h1> Chats </h1>
-  </div>
-  <div class="all-chats-container">
+ <div class="d-flex message-preview">
      <% if message.present? %>
-    <div class="d-flex message-preview">
+
       <%=image_tag(current_user.photo, :class => "avatar-55")%>
      <div class="flex-column">
       <div class="user-name">
@@ -15,10 +10,7 @@
         <%= message.message %>
       </div>
       </div>
-    </div>
-    <% else %>
-    You have a new trade request! Click here to start chatting.
+      <% else %>
+    You have a new trade request! Click here to find out who it is from.
     <% end %>
-  </div>
 </div>
-
