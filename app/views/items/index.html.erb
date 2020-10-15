@@ -21,7 +21,7 @@
           <%=cl_image_tag item.photos.last.key, class:"dashboard-item" if item.photos.attached?%>
         <% end %>
       <% end %>
-      <%= link_to new_item_path do %>
+      <%= link_to new_item_path, data: {turbolinks:false} do %>
         <% unless current_user.items.length >= 10%>
           <%=image_tag("add_photo.jpg", :class => "avatar-120-add-item")%>
         <% end %>
