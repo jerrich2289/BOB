@@ -23,7 +23,7 @@
       <% end %>
       <%= link_to new_item_path, data: {turbolinks:false} do %>
         <% unless current_user.items.length >= 10%>
-          <%=image_tag("add_photo.jpg", :class => "avatar-120-add-item")%>
+          <%=image_tag("add_photo.jpg", :class => "avatar-120-add-item") %>
         <% end %>
       <% end %>
     </div>
