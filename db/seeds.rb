@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 puts "Deleting all the old stuff..."
 Message.destroy_all
 Trade.destroy_all
@@ -25,18 +18,18 @@ user5.photo.attach(io: File.open("app/assets/images/seed/marshall.jpg"),filename
 
 puts "Adding items..."
 item1 = Item.new(name: "Bowl", description: "Well taken care of glass bowl", size: "2", owner: user1,)
-item1.photos.attach(io: File.open("app/assets/images/seed/bowl-a.jpg"),filename: "bowl-a.jpg")
-item1.photos.attach(io: File.open("app/assets/images/seed/bowl-b.jpg"),filename: "bowl-b.jpg")
+item1.photos.attach(io: File.open("app/assets/images/seed/Bowl-a.jpg"),filename: "bowl-a.jpg")
+item1.photos.attach(io: File.open("app/assets/images/seed/Bowl-b.jpg"),filename: "bowl-b.jpg")
 item1.save!
 
 item2 = Item.new(name: 'Olympus Camera', description: 'Old 35mm Camera', size: '2', owner: user2)
-item2.photos.attach(io: File.open("app/assets/images/seed/camera-a.jpg"),filename: "camera-a.jpg")
-item2.photos.attach(io: File.open("app/assets/images/seed/camera-b.jpg"),filename: "camera-b.jpg")
+item2.photos.attach(io: File.open("app/assets/images/seed/Camera-a.jpg"),filename: "camera-a.jpg")
+item2.photos.attach(io: File.open("app/assets/images/seed/Camera-b.jpg"),filename: "camera-b.jpg")
 item2.save!
 
 item3 = Item.new(name: "Chair", description: "Great Chair", size: "3", owner: user3)
-item3.photos.attach(io: File.open("app/assets/images/seed/chair-a.jpg"),filename: "chair-a.jpg")
-item3.photos.attach(io: File.open("app/assets/images/seed/chair-b.jpg"),filename: "chair-b.jpg")
+item3.photos.attach(io: File.open("app/assets/images/seed/Chair-a.jpg"),filename: "chair-a.jpg")
+item3.photos.attach(io: File.open("app/assets/images/seed/Chair-b.jpg"),filename: "chair-b.jpg")
 item3.save!
 
 item4 = Item.new(name: "iPod", description: "Old iPod", size: "2", owner: user4)
@@ -55,7 +48,7 @@ item6.photos.attach(io: File.open("app/assets/images/seed/light-b.jpg"),filename
 item6.save!
 
 item7 = Item.new(name: "Cooking Pan", description: "Cooking Pan", size: "2", owner: user3)
-item7.photos.attach(io: File.open("app/assets/images/seed/pan.jpg"),filename: "pan.jpg")
+item7.photos.attach(io: File.open("app/assets/images/seed/Pan.jpg"),filename: "pan.jpg")
 item7.save!
 
 puts "Adding trades..."
